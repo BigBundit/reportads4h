@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Prompt", ui-sans-serif, system-ui, sans-serif;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+  
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background-color: white !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  /* Prevent elements from breaking across pages across standard sections */
+  .border {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
