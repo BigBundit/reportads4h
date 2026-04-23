@@ -164,31 +164,31 @@ export default function App() {
       {/* HEADER SECTION */}
       <div className="bg-[#1A3B2B] text-white rounded-xl p-4 mb-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 md:gap-3 shadow-sm print:bg-white print:text-slate-900 print:border-b print:border-slate-200 print:shadow-none print:rounded-none px-4">
         <div>
-          <div className="text-[10px] tracking-widest text-emerald-300 print:text-slate-500 mb-1 uppercase font-semibold">BNH Hospital · Competitive Intelligence</div>
-          <h1 className="text-xl md:text-2xl font-extrabold m-0 text-white print:text-slate-900 flex items-center gap-2">
+          <div className="text-[12px] tracking-widest text-emerald-300 print:text-slate-500 mb-1 uppercase font-semibold">BNH Hospital · Competitive Intelligence</div>
+          <h1 className="text-2xl md:text-3xl font-extrabold m-0 text-white print:text-slate-900 flex items-center gap-2">
             🏥 สมรภูมิโรงพยาบาลพรีเมียม
           </h1>
-          <p className="text-emerald-200 print:text-slate-600 text-xs mt-1 mb-3">
+          <p className="text-emerald-200 print:text-slate-600 text-sm mt-1 mb-3">
             วิเคราะห์ 4 คู่แข่งหลัก · {fileName ? `ข้อมูลจาก ${fileName}` : 'ข้อมูลจริงจาก FB Ad Library'} · {data.monthRange}
           </p>
           <div className="flex flex-wrap items-center gap-2 no-print">
-             <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener noreferrer" className="bg-[#0866FF] hover:bg-blue-600 transition-colors text-white text-[10px] font-bold px-2.5 py-1 rounded-md flex items-center gap-1.5 shadow-sm">
+             <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener noreferrer" className="bg-[#0866FF] hover:bg-blue-600 transition-colors text-white text-[12px] font-bold px-2.5 py-1 rounded-md flex items-center gap-1.5 shadow-sm">
                FB Ads Library <ExternalLink className="w-3 h-3" />
              </a>
-             <a href="https://adstransparency.google.com/" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 border border-white/20 transition-colors text-white text-[10px] font-bold px-2.5 py-1 rounded-md flex items-center gap-1.5 shadow-sm">
+             <a href="https://adstransparency.google.com/" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 border border-white/20 transition-colors text-white text-[12px] font-bold px-2.5 py-1 rounded-md flex items-center gap-1.5 shadow-sm">
                Google Ads Transparency <ExternalLink className="w-3 h-3" />
              </a>
           </div>
         </div>
         <div className="flex flex-col gap-2.5 w-full md:w-auto md:text-right">
-          <div className="bg-emerald-900/50 print:bg-white print:border-slate-200 print:text-slate-600 backdrop-blur-sm px-3 py-1.5 md:py-1 rounded-md text-[11px] md:text-[11px] font-medium text-emerald-200 border border-emerald-800/50 flex items-center justify-start md:justify-end gap-1.5">
+          <div className="bg-emerald-900/50 print:bg-white print:border-slate-200 print:text-slate-600 backdrop-blur-sm px-3 py-1.5 md:py-1 rounded-md text-[13px] md:text-[13px] font-medium text-emerald-200 border border-emerald-800/50 flex items-center justify-start md:justify-end gap-1.5">
             📅 อัปเดต: {data.updateDate}
           </div>
           
           <div className="flex items-center gap-2 w-full md:w-auto no-print">
             <button 
               onClick={handleExportPDF}
-              className="bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition-colors px-3 py-2 md:py-1.5 rounded-md text-[11px] font-bold flex items-center justify-center gap-1.5 shadow-sm flex-1 md:flex-initial"
+              className="bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition-colors px-3 py-2 md:py-1.5 rounded-md text-[13px] font-bold flex items-center justify-center gap-1.5 shadow-sm flex-1 md:flex-initial"
             >
               <Download className="w-4 h-4"/> 
               <span className="md:hidden lg:inline">Export PDF</span>
@@ -202,7 +202,7 @@ export default function App() {
                 disabled={isUploading}
                 ref={fileInputRef}
               />
-              <div className={`bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 transition-all transform hover:scale-[1.02] active:scale-[0.98] border border-emerald-400/50 px-3 py-2 md:py-1.5 rounded-md text-[12px] md:text-[11px] font-bold text-white flex items-center justify-center gap-1.5 shadow-md ${isUploading ? 'opacity-70 pointer-events-none' : ''}`}>
+              <div className={`bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 transition-all transform hover:scale-[1.02] active:scale-[0.98] border border-emerald-400/50 px-3 py-2 md:py-1.5 rounded-md text-[14px] md:text-[13px] font-bold text-white flex items-center justify-center gap-1.5 shadow-md ${isUploading ? 'opacity-70 pointer-events-none' : ''}`}>
                  {isUploading ? <Loader2 className="w-4 h-4 md:w-3 md:h-3 animate-spin"/> : <Upload className="w-4 h-4 md:w-3 md:h-3"/>}
                  {isUploading ? 'กำลังวิเคราะห์ AI...' : 'อัปโหลด PDF ใหม่'}
               </div>
@@ -212,7 +212,7 @@ export default function App() {
       </div>
 
       {errorMsg && (
-        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 flex items-center gap-2 text-xs">
+        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 flex items-center gap-2 text-sm">
           <AlertCircle className="w-4 h-4 shrink-0" />
           {errorMsg}
         </motion.div>
@@ -227,21 +227,21 @@ export default function App() {
               <div className="absolute top-0 left-0 w-full h-1" style={{ backgroundColor: h.borderTop }}></div>
               <div className="flex items-center justify-between mb-3">
                 <img src={h.logo} alt={h.name} className="h-6 max-w-[80px] object-contain" />
-                <span className="text-white px-2 py-0.5 rounded text-[10px] font-bold shadow-sm" style={{ backgroundColor: h.badgeBg }}>
+                <span className="text-white px-2 py-0.5 rounded text-[12px] font-bold shadow-sm" style={{ backgroundColor: h.badgeBg }}>
                   {h.count} Ads
                 </span>
               </div>
-              <div className="text-[12px] text-slate-500 mb-0.5">{h.name}</div>
-              <div className="text-3xl font-extrabold tracking-tight mb-0" style={{ color: h.borderTop }}>{h.count}</div>
-              <div className="text-[11px] text-slate-400 mb-2">Active Ads (FB Library)</div>
+              <div className="text-[14px] text-slate-500 mb-0.5">{h.name}</div>
+              <div className="text-4xl font-extrabold tracking-tight mb-0" style={{ color: h.borderTop }}>{h.count}</div>
+              <div className="text-[13px] text-slate-400 mb-2">Active Ads (FB Library)</div>
               
-              <div className="mt-auto text-[10px] font-semibold py-1 px-2 rounded bg-opacity-10 mb-2 w-fit" style={{ color: h.focusColor, backgroundColor: h.focusColor + '15' }}>
+              <div className="mt-auto text-[12px] font-semibold py-1 px-2 rounded bg-opacity-10 mb-2 w-fit" style={{ color: h.focusColor, backgroundColor: h.focusColor + '15' }}>
                 {h.focusBadge}
               </div>
               
               <button 
                 onClick={() => openModal(h.id)}
-                className="w-full mt-1 py-1.5 rounded-md text-[11px] font-bold border transition-colors flex items-center justify-center gap-1.5"
+                className="w-full mt-1 py-1.5 rounded-md text-[13px] font-bold border transition-colors flex items-center justify-center gap-1.5"
                 style={{ borderColor: h.borderTop, color: h.borderTop, backgroundColor: h.buttonBg }}
               >
                 <div className="hover:scale-110 transition-transform">🔍</div> ดู Ads จริง
@@ -256,17 +256,17 @@ export default function App() {
       <div className="bg-white p-4 md:p-5 rounded-xl border border-slate-200 shadow-sm mb-5 overflow-hidden">
         <div className="flex items-center gap-2 border-b border-teal-600/30 pb-2 mb-3">
           <BarChart2 className="w-4 h-4 text-teal-600" />
-          <h2 className="text-[15px] font-bold text-slate-800 m-0">Section 1 · Competitor Activity Timeline</h2>
+          <h2 className="text-[17px] font-bold text-slate-800 m-0">Section 1 · Competitor Activity Timeline</h2>
         </div>
-        <p className="text-[11px] text-slate-500 mb-4">แสดงแคมเปญที่ Active จริงของแต่ละโรงพยาบาล แยกตามสัปดาห์</p>
+        <p className="text-[13px] text-slate-500 mb-4">แสดงแคมเปญที่ Active จริงของแต่ละโรงพยาบาล แยกตามสัปดาห์</p>
         
         <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
           <table className="w-full min-w-[800px] border-collapse rounded-lg overflow-hidden border border-slate-200">
             <thead>
               <tr className="bg-slate-50 border-b border-slate-200">
-                <th className="text-slate-600 text-left p-2.5 text-[11px] font-bold w-[160px] border-r border-slate-200">โรงพยาบาล</th>
+                <th className="text-slate-600 text-left p-2.5 text-[13px] font-bold w-[160px] border-r border-slate-200">โรงพยาบาล</th>
                 {data.timelineHeaders.map((h, i) => (
-                  <th key={i} className="text-slate-600 text-left p-2.5 text-[10px] font-semibold border-r border-slate-200 last:border-0">{h}</th>
+                  <th key={i} className="text-slate-600 text-left p-2.5 text-[12px] font-semibold border-r border-slate-200 last:border-0">{h}</th>
                 ))}
               </tr>
             </thead>
@@ -281,8 +281,8 @@ export default function App() {
                           <img src={h.logo} alt={h.nameEn} className="w-5 h-5 object-contain" />
                         </div>
                         <div>
-                          <div className="text-[12px] font-bold leading-tight" style={{ color: h.borderTop }}>{h.nameEn.split(' ')[0]}</div>
-                          <div className="text-[10px] text-slate-500 leading-tight whitespace-pre-wrap">{h.nameEn.split(' ').slice(1).join(' ').replace(' (@','\n(@')}</div>
+                          <div className="text-[14px] font-bold leading-tight" style={{ color: h.borderTop }}>{h.nameEn.split(' ')[0]}</div>
+                          <div className="text-[12px] text-slate-500 leading-tight whitespace-pre-wrap">{h.nameEn.split(' ').slice(1).join(' ').replace(' (@','\n(@')}</div>
                         </div>
                       </div>
                     </td>
@@ -290,7 +290,7 @@ export default function App() {
                       <td key={i} className="p-2 border-r border-slate-100 last:border-0 align-top">
                         <div className="flex flex-col gap-1">
                           {weekTags?.map((tag: any, j: number) => (
-                            <span key={j} className="text-[10px] font-medium px-1.5 py-0.5 rounded text-white whitespace-normal shadow-sm leading-tight inline-block" style={{ backgroundColor: tag.bg || h.focusColor, color: tag.color || '#fff' }}>
+                            <span key={j} className="text-[12px] font-medium px-1.5 py-0.5 rounded text-white whitespace-normal shadow-sm leading-tight inline-block" style={{ backgroundColor: tag.bg || h.focusColor, color: tag.color || '#fff' }}>
                               {tag.text}
                             </span>
                           ))}
@@ -311,13 +311,13 @@ export default function App() {
         <div className="flex flex-wrap items-center justify-between gap-3 border-b border-teal-600/30 pb-2 mb-4">
           <div className="flex items-center gap-2">
             <FileText className="w-4 h-4 text-teal-600" />
-            <h2 className="text-[15px] font-bold text-slate-800 m-0">Section 2 · Ads จริงที่กำลังรันอยู่ แยกตามโรงพยาบาล</h2>
+            <h2 className="text-[17px] font-bold text-slate-800 m-0">Section 2 · Ads จริงที่กำลังรันอยู่ แยกตามโรงพยาบาล</h2>
           </div>
           <div className="flex items-center gap-2">
-             <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener noreferrer" className="bg-[#0866FF]/10 text-[#0866FF] hover:bg-[#0866FF]/20 transition-colors text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1 shadow-sm">
+             <a href="https://www.facebook.com/ads/library/" target="_blank" rel="noopener noreferrer" className="bg-[#0866FF]/10 text-[#0866FF] hover:bg-[#0866FF]/20 transition-colors text-[12px] font-bold px-2 py-1 rounded flex items-center gap-1 shadow-sm">
                FB Ads Library <ExternalLink className="w-3 h-3" />
              </a>
-             <a href="https://adstransparency.google.com/" target="_blank" rel="noopener noreferrer" className="bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors text-[10px] font-bold px-2 py-1 rounded flex items-center gap-1 shadow-sm">
+             <a href="https://adstransparency.google.com/" target="_blank" rel="noopener noreferrer" className="bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors text-[12px] font-bold px-2 py-1 rounded flex items-center gap-1 shadow-sm">
                Google Ads <ExternalLink className="w-3 h-3" />
              </a>
           </div>
@@ -335,11 +335,11 @@ export default function App() {
                     <img src={h.logo} alt={h.nameEn} className="h-6 w-auto max-w-[80px] object-contain" />
                   </div>
                   <div>
-                    <div className="text-[14px] font-extrabold" style={{ color: h.borderTop }}>{h.name} ({h.nameEn})</div>
-                    <div className="text-[11px] font-semibold mt-0.5" style={{ color: h.focusColor }}>{h.count} Active Ads</div>
+                    <div className="text-[16px] font-extrabold" style={{ color: h.borderTop }}>{h.name} ({h.nameEn})</div>
+                    <div className="text-[13px] font-semibold mt-0.5" style={{ color: h.focusColor }}>{h.count} Active Ads</div>
                   </div>
                 </div>
-                <button onClick={() => openModal(key)} className="px-5 py-2 text-white text-[12px] font-bold rounded-md shadow flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all no-print" style={{ backgroundColor: h.borderTop }}>
+                <button onClick={() => openModal(key)} className="px-5 py-2 text-white text-[14px] font-bold rounded-md shadow flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all no-print" style={{ backgroundColor: h.borderTop }}>
                   <ExternalLink className="w-3.5 h-3.5" />
                   ดู Ads ทั้งหมด
                 </button>
@@ -349,20 +349,20 @@ export default function App() {
                 {h.ads.slice(0, 3).map((ad, i) => (
                   <div key={i} className="bg-white p-3 rounded-lg border flex flex-col h-full shadow-sm hover:shadow-md transition-shadow" style={{ borderColor: h.borderTop + '30' }}>
                     <div className="flex justify-between items-start mb-2 gap-2">
-                       <span className="text-[12px] font-bold text-slate-800 leading-tight">{ad.title}</span>
-                       <span className="text-[9px] font-bold text-white px-2 py-0.5 rounded shrink-0 shadow-sm" style={{ backgroundColor: ad.color || h.focusColor }}>
+                       <span className="text-[14px] font-bold text-slate-800 leading-tight">{ad.title}</span>
+                       <span className="text-[11px] font-bold text-white px-2 py-0.5 rounded shrink-0 shadow-sm" style={{ backgroundColor: ad.color || h.focusColor }}>
                          {ad.type}
                        </span>
                     </div>
-                    <p className="text-[11px] text-slate-600 mb-2 leading-relaxed flex-grow">{ad.detail}</p>
+                    <p className="text-[13px] text-slate-600 mb-2 leading-relaxed flex-grow">{ad.detail}</p>
                     
                     <div className="flex flex-wrap gap-1.5 mb-2">
-                       {ad.platform && <span className="bg-slate-50 border border-slate-200 text-slate-600 px-1.5 py-0.5 rounded text-[9px] font-medium tracking-wide">📢 {ad.platform}</span>}
-                       {ad.date && <span className="bg-slate-50 border border-slate-200 text-slate-600 px-1.5 py-0.5 rounded text-[9px] font-medium">📅 {ad.date}</span>}
-                       {ad.price && <span className="bg-emerald-50 border border-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded text-[9px] font-bold">💰 {ad.price}</span>}
+                       {ad.platform && <span className="bg-slate-50 border border-slate-200 text-slate-600 px-1.5 py-0.5 rounded text-[11px] font-medium tracking-wide">📢 {ad.platform}</span>}
+                       {ad.date && <span className="bg-slate-50 border border-slate-200 text-slate-600 px-1.5 py-0.5 rounded text-[11px] font-medium">📅 {ad.date}</span>}
+                       {ad.price && <span className="bg-emerald-50 border border-emerald-100 text-emerald-800 px-1.5 py-0.5 rounded text-[11px] font-bold">💰 {ad.price}</span>}
                     </div>
 
-                    <div className="bg-slate-50 border border-slate-200 p-2 rounded text-[10px] text-slate-500 mt-auto leading-tight">
+                    <div className="bg-slate-50 border border-slate-200 p-2 rounded text-[12px] text-slate-500 mt-auto leading-tight">
                        <span className="mr-1">📸</span> {ad.imgDesc}
                     </div>
                   </div>
@@ -376,19 +376,19 @@ export default function App() {
       {/* SECTION 3: PRICING */}
       <div className="bg-white p-4 md:p-5 rounded-xl border border-slate-200 shadow-sm mb-5">
         <div className="flex items-center gap-2 border-b border-teal-600/30 pb-2 mb-4">
-           <span className="text-[16px]">💰</span>
-           <h2 className="text-[15px] font-bold text-slate-800 m-0">Section 3 · ราคาและโปรโมชันจริงที่พบใน Ads</h2>
+           <span className="text-[18px]">💰</span>
+           <h2 className="text-[17px] font-bold text-slate-800 m-0">Section 3 · ราคาและโปรโมชันจริงที่พบใน Ads</h2>
         </div>
         
         <div className="overflow-x-auto -mx-4 px-4 md:mx-0 md:px-0">
           <table className="w-full border-collapse border border-slate-200 rounded-lg overflow-hidden">
             <thead>
               <tr className="bg-slate-100 border-b border-slate-200">
-                <th className="text-slate-700 text-left p-2.5 text-[11px] font-bold border-r border-slate-200">บริการ / Hero Product</th>
+                <th className="text-slate-700 text-left p-2.5 text-[13px] font-bold border-r border-slate-200">บริการ / Hero Product</th>
                 {hospKeys.map((key, i) => {
                   const h = data.hospitals[key];
                   return (
-                    <th key={key} className={`text-slate-700 text-left p-2.5 text-[11px] font-bold border-r border-slate-200 last:border-0`}>
+                    <th key={key} className={`text-slate-700 text-left p-2.5 text-[13px] font-bold border-r border-slate-200 last:border-0`}>
                       <div className="flex items-center gap-1.5">
                         <div className="bg-white p-1 rounded border border-slate-200 shadow-sm shrink-0">
                           <img src={h.logo} alt={h.nameEn} className="h-4 w-auto max-w-[40px] object-contain" />
@@ -403,17 +403,17 @@ export default function App() {
             <tbody>
               {data.pricing.map((row, i) => (
                 <tr key={i} className="border-b border-slate-200 hover:bg-slate-50 transition-colors last:border-0">
-                  <td className="p-2.5 text-[11px] font-bold text-slate-800 border-r border-slate-200 bg-white">{row.service}</td>
+                  <td className="p-2.5 text-[13px] font-bold text-slate-800 border-r border-slate-200 bg-white">{row.service}</td>
                   {hospKeys.map(key => {
                     const cell = row[key as keyof typeof row] as any;
-                    if(!cell) return <td key={key} className="p-2.5 text-[11px] text-slate-400 border-r border-slate-200 last:border-0">N/A</td>;
+                    if(!cell) return <td key={key} className="p-2.5 text-[13px] text-slate-400 border-r border-slate-200 last:border-0">N/A</td>;
                     return (
                       <td key={key} className="p-2.5 align-top border-r border-slate-200 last:border-0 bg-white/50">
-                        <div className={`text-[12px] leading-tight ${cell.p1?.includes('ไม่ระบุ') ? 'text-slate-400 font-normal':'font-bold text-slate-900'}`} style={!cell.p1?.includes('ไม่ระบุ') ? { color: data.hospitals[key].borderTop } : {}}>
+                        <div className={`text-[14px] leading-tight ${cell.p1?.includes('ไม่ระบุ') ? 'text-slate-400 font-normal':'font-bold text-slate-900'}`} style={!cell.p1?.includes('ไม่ระบุ') ? { color: data.hospitals[key].borderTop } : {}}>
                           {cell.p1}
                         </div>
-                        {cell.p2 && <div className="text-[10px] text-slate-500 mt-1 leading-tight">{cell.p2}</div>}
-                        {cell.highlight && <div className="mt-1.5 inline-block px-1.5 py-0.5 bg-amber-50 text-amber-800 rounded text-[9px] font-bold border border-amber-200 shadow-sm leading-none">⭐ โปรในแอด</div>}
+                        {cell.p2 && <div className="text-[12px] text-slate-500 mt-1 leading-tight">{cell.p2}</div>}
+                        {cell.highlight && <div className="mt-1.5 inline-block px-1.5 py-0.5 bg-amber-50 text-amber-800 rounded text-[11px] font-bold border border-amber-200 shadow-sm leading-none">⭐ โปรในแอด</div>}
                       </td>
                     );
                   })}
@@ -428,7 +428,7 @@ export default function App() {
       <div className="bg-white p-4 md:p-5 rounded-xl border border-slate-200 shadow-sm mb-6">
         <div className="flex items-center gap-2 border-b border-teal-600/30 pb-2 mb-4">
           <Settings className="w-4 h-4 text-teal-600" />
-          <h2 className="text-[15px] font-bold text-slate-800 m-0">Section 4 · Strategic Implications</h2>
+          <h2 className="text-[17px] font-bold text-slate-800 m-0">Section 4 · Strategic Implications</h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {data.implications.map((imp, i) => (
@@ -436,8 +436,8 @@ export default function App() {
               <div className="flex items-start gap-3">
                 <div className="text-xl shadow-sm bg-white p-1.5 border border-slate-200 rounded-md shrink-0">{imp.icon}</div>
                 <div>
-                  <div className="font-bold text-[12px] mb-1.5 leading-tight" style={{ color: imp.color }}>{imp.title}</div>
-                  <p className="text-[11px] text-slate-600 leading-relaxed m-0">{imp.desc}</p>
+                  <div className="font-bold text-[14px] mb-1.5 leading-tight" style={{ color: imp.color }}>{imp.title}</div>
+                  <p className="text-[13px] text-slate-600 leading-relaxed m-0">{imp.desc}</p>
                 </div>
               </div>
             </div>
@@ -450,7 +450,7 @@ export default function App() {
       <div className="bg-white p-4 md:p-5 rounded-xl border border-slate-200 shadow-sm mb-6 no-print">
         <div className="flex items-center gap-2 border-b border-teal-600/30 pb-2 mb-4">
           <ExternalLink className="w-4 h-4 text-teal-600" />
-          <h2 className="text-[15px] font-bold text-slate-800 m-0">Section 5 · คู่แข่งที่ Focus & ลิงก์แหล่งอ้างอิง</h2>
+          <h2 className="text-[17px] font-bold text-slate-800 m-0">Section 5 · คู่แข่งที่ Focus & ลิงก์แหล่งอ้างอิง</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {data.competitorsData.map((comp: any, i: number) => (
@@ -460,7 +460,7 @@ export default function App() {
                 <div className="bg-white p-1 rounded shadow-sm border border-slate-100 flex-shrink-0">
                   <img src={comp.logo} alt={comp.name} className="h-5 w-auto max-w-[60px] object-contain" />
                 </div>
-                <h3 className="text-[11px] font-bold text-slate-800 m-0 leading-tight flex-1 line-clamp-2" title={comp.name}>{comp.name}</h3>
+                <h3 className="text-[13px] font-bold text-slate-800 m-0 leading-tight flex-1 line-clamp-2" title={comp.name}>{comp.name}</h3>
               </div>
               
               <div className="flex flex-col gap-1.5 ml-1 mt-auto">
@@ -486,8 +486,8 @@ export default function App() {
 
       {/* FOOTER */}
       <div className="bg-[#1A3B2B] print:bg-white print:text-slate-500 print:max-w-none text-emerald-100 rounded-xl p-4 text-center max-w-lg mx-auto shadow-sm border border-emerald-900 print:border-none print:shadow-none">
-        <p className="font-bold text-emerald-300 mb-1 text-[11px] flex items-center justify-center gap-1.5"><Settings className="w-3 h-3"/> ข้อมูลอัปเดตและวิเคราะห์โดย AI</p>
-        <p className="text-[10px] mb-0 opacity-80">BNH Marketing Intelligence Team · Dashboard v4.0</p>
+        <p className="font-bold text-emerald-300 mb-1 text-[13px] flex items-center justify-center gap-1.5"><Settings className="w-3 h-3"/> ข้อมูลอัปเดตและวิเคราะห์โดย AI</p>
+        <p className="text-[12px] mb-0 opacity-80">BNH Marketing Intelligence Team · Dashboard v4.0</p>
       </div>
 
       {/* MODAL */}
@@ -513,8 +513,8 @@ export default function App() {
                     <img src={modalData.logo} alt={modalData.nameEn} className="h-8 max-w-[100px] object-contain" />
                   </div>
                   <div>
-                    <h2 className="text-lg font-extrabold m-0 leading-tight" style={{ color: modalData.color }}>{modalData.name}</h2>
-                    <div className="text-[11px] text-slate-500 mt-1 flex flex-wrap items-center gap-2 md:gap-3">
+                    <h2 className="text-xl font-extrabold m-0 leading-tight" style={{ color: modalData.color }}>{modalData.name}</h2>
+                    <div className="text-[13px] text-slate-500 mt-1 flex flex-wrap items-center gap-2 md:gap-3">
                       <span>{modalData.nameEn}</span>
                       <span className="hidden md:inline text-slate-300">·</span>
                       <div className="flex items-center gap-2">
@@ -532,26 +532,26 @@ export default function App() {
               
               <div className="p-4 overflow-y-auto flex-1 bg-slate-50">
                 <div className="flex items-center gap-2 mb-4 bg-white border border-slate-200 px-3 py-2 rounded-lg shadow-sm w-fit">
-                   <div className="text-[12px] font-bold px-2 py-0.5 rounded text-white" style={{ backgroundColor: modalData.color }}>📊 {modalData.count} แคมเปญ Active</div>
+                   <div className="text-[14px] font-bold px-2 py-0.5 rounded text-white" style={{ backgroundColor: modalData.color }}>📊 {modalData.count} แคมเปญ Active</div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 space-y-0">
                   {modalData.ads?.map((ad: any, i: number) => (
                     <div key={i} className="bg-white rounded-lg p-3 border border-slate-200 shadow-sm relative overflow-hidden flex flex-col" style={{ borderLeftWidth: '4px', borderLeftColor: modalData.color }}>
                        <div className="flex justify-between items-start gap-2 mb-2">
-                         <h3 className="text-[13px] font-bold text-slate-900 m-0 leading-snug">{ad.title}</h3>
-                         <span className="text-[10px] font-bold text-white px-2 py-0.5 rounded shrink-0 shadow-sm leading-none" style={{ backgroundColor: ad.color || modalData.color }}>{ad.type}</span>
+                         <h3 className="text-[15px] font-bold text-slate-900 m-0 leading-snug">{ad.title}</h3>
+                         <span className="text-[12px] font-bold text-white px-2 py-0.5 rounded shrink-0 shadow-sm leading-none" style={{ backgroundColor: ad.color || modalData.color }}>{ad.type}</span>
                        </div>
-                       <p className="text-[11px] text-slate-600 mb-3 leading-relaxed flex-grow">{ad.detail}</p>
+                       <p className="text-[13px] text-slate-600 mb-3 leading-relaxed flex-grow">{ad.detail}</p>
                        
-                       <div className="flex flex-wrap gap-1.5 text-[10px] font-medium text-slate-600 mb-3">
+                       <div className="flex flex-wrap gap-1.5 text-[12px] font-medium text-slate-600 mb-3">
                          {ad.platform && <span className="bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200 flex items-center gap-1"><span className="opacity-70">📢</span> {ad.platform}</span>}
                          {ad.date && <span className="bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200 flex items-center gap-1"><span className="opacity-70">📅</span> {ad.date}</span>}
                          {ad.price && <span className="bg-emerald-50 text-emerald-800 px-1.5 py-0.5 rounded border border-emerald-100 flex items-center gap-1 font-bold"><span className="opacity-70">💰</span> {ad.price}</span>}
                          {ad.target && <span className="bg-indigo-50 text-indigo-800 px-1.5 py-0.5 rounded border border-indigo-100 flex items-center gap-1"><span className="opacity-70">🎯</span> {ad.target}</span>}
                        </div>
 
-                       <div className="bg-slate-50 border border-slate-200 p-2 rounded text-[10px] text-slate-600 flex items-start gap-1.5 mt-auto leading-tight">
+                       <div className="bg-slate-50 border border-slate-200 p-2 rounded text-[12px] text-slate-600 flex items-start gap-1.5 mt-auto leading-tight">
                          <span className="text-xs shrink-0 leading-none">📸</span> <div>{ad.imgDesc}</div>
                        </div>
                     </div>
