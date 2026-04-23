@@ -100,7 +100,7 @@ export default function App() {
       };
 
       const response = await ai.models.generateContent({
-        model: 'gemini-2.0-flash',
+        model: 'gemini-1.5-flash',
         contents: [
           {
             parts: [
@@ -145,7 +145,13 @@ export default function App() {
       setData(mergedData);
     } catch (err: any) {
       console.error(err);
-      setErrorMsg('Failed to analyze PDF. Please try again. ' + (err.message || ''));
+      let msg = 'Failed to analyze PDF. Please try again. ';
+      if (err.message?.includes('429') || err.message?.includes('quota')) {
+        msg = '⚠️ โควตา API เต็มชั่วคราว (Rate Limit) กรุณารอสัก 10-60 วินาทีแล้วลองใหม่ครับ';
+      } else {
+        msg += (err.message || '');
+      }
+      setErrorMsg(msg);
     } finally {
       setIsUploading(false);
       if (fileInputRef.current) fileInputRef.current.value = '';
