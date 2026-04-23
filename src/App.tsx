@@ -273,6 +273,15 @@ export default function App() {
               >
                 <div className="hover:scale-110 transition-transform">🔍</div> ดู Ads จริง
               </button>
+
+              {/* Quick Links from Section 5 */}
+              <div className="mt-2 flex flex-wrap gap-2 justify-center no-print">
+                {data.competitorsData.find((c: any) => c.name.includes(h.name) || h.name.includes(c.name))?.links.map((link: any, idx: number) => (
+                  <a key={idx} href={link.url} target="_blank" rel="noopener noreferrer" title={link.text} className="p-1 hover:bg-slate-100 rounded-md transition-colors border border-slate-100 shadow-sm bg-white">
+                    <img src={link.icon} alt="" className="w-3.5 h-3.5" />
+                  </a>
+                ))}
+              </div>
             </div>
           );
         })}
@@ -366,10 +375,27 @@ export default function App() {
                     <div className="text-[13px] font-semibold mt-0.5" style={{ color: h.focusColor }}>{h.count} Active Ads</div>
                   </div>
                 </div>
-                <button onClick={() => openModal(key)} className="px-5 py-2 text-white text-[14px] font-bold rounded-md shadow flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all no-print" style={{ backgroundColor: h.borderTop }}>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                  ดู Ads ทั้งหมด
-                </button>
+                <div className="flex flex-wrap items-center gap-3 no-print">
+                  <div className="flex items-center gap-1.5 bg-white/50 backdrop-blur-sm p-1 rounded-lg border border-slate-200/50 shadow-sm mr-2">
+                    {data.competitorsData.find((c: any) => c.name.includes(h.name) || h.name.includes(c.name))?.links.map((link: any, idx: number) => (
+                      <a 
+                        key={idx} 
+                        href={link.url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="p-1.5 hover:bg-white rounded-md transition-all shadow-sm border border-transparent hover:border-slate-200 flex items-center gap-1.5 text-[11px] font-bold text-slate-600"
+                        title={link.text}
+                      >
+                        <img src={link.icon} alt="" className="w-3.5 h-3.5" />
+                        <span className="hidden lg:inline">{link.type === 'fb' ? 'FB Library' : 'Google Ads'}</span>
+                      </a>
+                    ))}
+                  </div>
+                  <button onClick={() => openModal(key)} className="px-5 py-2 text-white text-[14px] font-bold rounded-md shadow flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] transition-all" style={{ backgroundColor: h.borderTop }}>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    ดู Ads ทั้งหมด
+                  </button>
+                </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
