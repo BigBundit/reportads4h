@@ -303,5 +303,31 @@ export const initialData = {
     }
   ],
   updateDate: '22 เมษายน 2569',
-  monthRange: 'มีนาคม – เมษายน 2569'
+  monthRange: 'มีนาคม – เมษายน 2569',
+  bnhNextSteps: [
+    {
+      title: 'Counter-Offer: Premium Inpatient Experience',
+      desc: 'จากการที่ Bumrungrad จัดโปรลดค่าห้อง 20% BNH ควรนำเสนอ "Extra Benefit" เช่น Complimentary Wellness Treatment หรือสิทธิพิเศษสำหรับญาติ เพื่อดึงดูดลูกค้าที่ต้องการความคุ้มค่าแบบพรีเมียมโดยไม่เสีย Brand Position',
+      priority: 'High',
+      icon: '🏥'
+    },
+    {
+      title: 'Price Transparency Strategy',
+      desc: 'เนื่องจาก Samitivej ประสบความสำเร็จในการลงราคาชัดเจน (6k/9.5k) BNH ควรคัดเลือกบริการ "Check-up" หรือ "Vaccine" มาทดลองระบุราคาในแอด เพื่อลดขั้นตอนการสอบถามและเพิ่ม Conversion Rate',
+      priority: 'High',
+      icon: '💰'
+    },
+    {
+      title: 'Specialized CoE Campaign Focus',
+      desc: 'MedPark กำลังรุกตลาด CoE อย่างหนัก BNH ควรชูจุดเด่น "Surgery Mastery" และความเชี่ยวชาญของแพทย์เฉพาะทางผ่านวิดีโอสัมภาษณ์เพื่อสร้างความเชื่อมั่นเหนือคู่แข่งที่เน้นแค่เทคโนโลยี',
+      priority: 'Medium',
+      icon: '🔬'
+    },
+    {
+      title: 'Maintain Ad Frequency (Share of Voice)',
+      desc: 'Bangkok Hospital มีจำนวนแอดสูงถึง 54 ตัว BNH จำเป็นต้องรักษาระดับการยิงแอดให้สม่ำเสมอในทุก Platform เพื่อไม่ให้ตกเทรนด์การรับรู้ (Awareness) ของลูกค้ากลุ่มเป้าหมาย',
+      priority: 'Medium',
+      icon: '📢'
+    }
+  ]
 };
