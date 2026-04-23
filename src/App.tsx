@@ -94,6 +94,18 @@ export default function App() {
             type: Type.ARRAY,
             items: { type: Type.STRING }
           },
+          bnhNextSteps: {
+            type: Type.ARRAY,
+            items: {
+              type: Type.OBJECT,
+              properties: { 
+                title: { type: Type.STRING }, 
+                desc: { type: Type.STRING },
+                priority: { type: Type.STRING }, // 'High', 'Medium', 'Low'
+                icon: { type: Type.STRING }
+              }
+            }
+          },
           updateDate: { type: Type.STRING },
           monthRange: { type: Type.STRING }
         }
@@ -111,6 +123,9 @@ export default function App() {
                 - MedPark (med)
                 - Samitivej Sukhumvit (sam)
                 
+                CRITICAL: Based on the competitors activity, provide 3-4 specific "BNH Strategic Next Steps". These should be actionable advice for BNH Hospital to stay competitive. 
+                For each step, provide a title, a detailed description (desc), a priority level, and a relevant emoji icon.
+
                 For 'color' fields, use valid hex color codes that match the hospital brand or the specific context (e.g., #1A3B2B for bkk, #128A84 for bum, #E27447 for med, #7B4FA0 for sam).
                 Provide accurate findings. If pricing is absent for a hospital, say "ไม่ระบุ" for p1. Highlight notable promotions by putting them in p1/p2.
                 ` },
@@ -138,6 +153,7 @@ export default function App() {
         pricing: extractedData.pricing || data.pricing,
         implications: extractedData.implications || data.implications,
         timelineHeaders: extractedData.timelineHeaders || data.timelineHeaders,
+        bnhNextSteps: extractedData.bnhNextSteps || data.bnhNextSteps,
         updateDate: extractedData.updateDate || data.updateDate,
         monthRange: extractedData.monthRange || data.monthRange
       };
@@ -503,6 +519,46 @@ export default function App() {
           ))}
         </div>
       </div>
+
+      {/* NEW SECTION: BNH NEXT STEPS */}
+      {data.bnhNextSteps && data.bnhNextSteps.length > 0 && (
+      <div className="bg-gradient-to-br from-[#1A3B2B] to-[#112a1f] p-5 md:p-6 rounded-xl shadow-lg mb-6 border border-emerald-800 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full -mr-16 -mt-16 blur-2xl"></div>
+        <div className="absolute bottom-0 left-0 w-24 h-24 bg-teal-500/10 rounded-full -ml-12 -mb-12 blur-xl"></div>
+        
+        <div className="flex items-center gap-3 border-b border-emerald-500/30 pb-3 mb-5 relative z-10">
+          <div className="bg-emerald-500/20 p-2 rounded-lg backdrop-blur-sm">
+            <Settings className="w-5 h-5 text-emerald-300" />
+          </div>
+          <div>
+            <h2 className="text-[17px] font-extrabold text-white m-0">BNH Strategic Next Steps</h2>
+            <p className="text-[11px] text-emerald-300/80 m-0">ข้อเสนอแนะเชิงกลยุทธ์เพื่อสร้างความได้เปรียบในการแข่งขัน</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 relative z-10">
+          {data.bnhNextSteps.map((step: any, i: number) => (
+            <div key={i} className="bg-white/5 backdrop-blur-md border border-white/10 p-4 rounded-xl hover:bg-white/10 transition-all group">
+              <div className="flex items-start gap-4">
+                <div className="text-2xl bg-white/10 p-2 rounded-lg group-hover:scale-110 transition-transform shadow-inner">{step.icon}</div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-1.5">
+                    <h3 className="font-bold text-[14px] text-emerald-200 m-0">{step.title}</h3>
+                    <span className={`text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wider shadow-sm ${
+                      step.priority === 'High' ? 'bg-rose-500/80 text-white' : 
+                      step.priority === 'Medium' ? 'bg-amber-500/80 text-white' : 'bg-emerald-500/80 text-white'
+                    }`}>
+                      {step.priority}
+                    </span>
+                  </div>
+                  <p className="text-[13px] text-slate-300 leading-relaxed m-0">{step.desc}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      )}
 
       {/* SECTION 5: COMPETITORS RESOURCES */}
       {data.competitorsData && data.competitorsData.length > 0 && (
