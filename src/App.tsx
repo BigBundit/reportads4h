@@ -153,7 +153,10 @@ export default function App() {
   };
 
   const openModal = (hospitalId: string) => {
-    setModalData(data.hospitals[hospitalId as keyof typeof data.hospitals]);
+    const hosp = data.hospitals[hospitalId as keyof typeof data.hospitals];
+    // Find matching competitor data to get links from Section 5
+    const comp = data.competitorsData.find((c: any) => c.name.includes(hosp.name) || hosp.name.includes(c.name));
+    setModalData({ ...hosp, links: comp?.links || [] });
   };
 
   const closeModal = () => {
@@ -538,14 +541,23 @@ export default function App() {
                   </div>
                   <div>
                     <h2 className="text-xl font-extrabold m-0 leading-tight" style={{ color: modalData.color }}>{modalData.name}</h2>
-                    <div className="text-[13px] text-slate-500 mt-1 flex flex-wrap items-center gap-2 md:gap-3">
-                      <span>{modalData.nameEn}</span>
-                      <span className="hidden md:inline text-slate-300">·</span>
-                      <div className="flex items-center gap-2">
-                         <a href={modalData.fbUrl || "https://www.facebook.com/ads/library/"} target="_blank" rel="noopener noreferrer" className="text-[#0866FF] hover:underline flex items-center gap-1 font-medium">FB Ad Library <ExternalLink className="w-3 h-3" /></a>
-                         <span className="text-slate-300">|</span>
-                         <a href="https://adstransparency.google.com/" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:underline flex items-center gap-1 font-medium">Google Ads <ExternalLink className="w-3 h-3" /></a>
-                      </div>
+                    <div className="text-[13px] text-slate-500 mt-1 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+                      <span className="font-semibold">{modalData.nameEn}</span>
+                      {modalData.links && modalData.links.map((link: any, idx: number) => (
+                        <React.Fragment key={idx}>
+                          <span className="hidden md:inline text-slate-300">|</span>
+                          <a 
+                            href={link.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="hover:underline flex items-center gap-1 font-medium"
+                            style={{ color: link.type === 'fb' ? '#0866FF' : '#475569' }}
+                          >
+                            <img src={link.icon} alt="" className="w-3.5 h-3.5" />
+                            {link.text}
+                          </a>
+                        </React.Fragment>
+                      ))}
                     </div>
                   </div>
                 </div>
