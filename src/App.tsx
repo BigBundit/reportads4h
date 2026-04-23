@@ -10,6 +10,8 @@ export default function App() {
   const [modalData, setModalData] = useState<any>(null);
   const [fileName, setFileName] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
+  const [apiKey, setApiKey] = useState(localStorage.getItem('GEMINI_API_KEY') || '');
+  const [showSettings, setShowSettings] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,6 +28,12 @@ export default function App() {
     setFileName(file.name);
 
     try {
+      const currentKey = apiKey || (process.env.GEMINI_API_KEY as string);
+      
+      if (!currentKey || currentKey === 'undefined') {
+        throw new Error('กรุณาตั้งค่า API Key ก่อนใช้งาน (ปุ่ม Settings มุมบนขวา)');
+      }
+
       const base64Data = await new Promise<string>((resolve, reject) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
@@ -36,7 +44,7 @@ export default function App() {
         reader.onerror = reject;
       });
 
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      const ai = new GoogleGenAI({ apiKey: currentKey });
       // Remove FB details and focus on dynamic data structure extraction
       const promptSchema = {
         type: Type.OBJECT,
@@ -158,6 +166,15 @@ export default function App() {
     window.print();
   };
 
+  const saveSettings = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const newKey = formData.get('apiKey') as string;
+    setApiKey(newKey);
+    localStorage.setItem('GEMINI_API_KEY', newKey);
+    setShowSettings(false);
+  };
+
   return (
     <div className="bg-slate-50 min-h-screen p-3 md:p-4 font-sans text-slate-900 selection:bg-teal-200">
       
@@ -186,6 +203,13 @@ export default function App() {
           </div>
           
           <div className="flex items-center gap-2 w-full md:w-auto no-print">
+            <button 
+              onClick={() => setShowSettings(true)}
+              className="bg-white/10 hover:bg-white/20 border border-white/20 transition-colors text-white p-2 rounded-md shadow-sm"
+              title="Settings"
+            >
+              <Settings className="w-5 h-5" />
+            </button>
             <button 
               onClick={handleExportPDF}
               className="bg-white text-slate-700 hover:bg-slate-100 border border-slate-200 transition-colors px-3 py-2 md:py-1.5 rounded-md text-[13px] font-bold flex items-center justify-center gap-1.5 shadow-sm flex-1 md:flex-initial"
@@ -558,6 +582,67 @@ export default function App() {
                   ))}
                 </div>
               </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* SETTINGS MODAL */}
+      <AnimatePresence>
+        {showSettings && (
+          <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ opacity: 0 }} 
+              animate={{ opacity: 1 }} 
+              exit={{ opacity: 0 }} 
+              className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
+              onClick={() => setShowSettings(false)}
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 10 }} 
+              animate={{ opacity: 1, scale: 1, y: 0 }} 
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              className="relative bg-white w-full max-w-md rounded-xl shadow-2xl overflow-hidden"
+            >
+              <div className="p-5 border-b border-slate-200 flex justify-between items-center bg-slate-50">
+                <h2 className="text-lg font-bold text-slate-800 flex items-center gap-2">
+                  <Settings className="w-5 h-5 text-teal-600" /> ตั้งค่าแอปพลิเคชัน
+                </h2>
+                <button onClick={() => setShowSettings(false)} className="text-slate-400 hover:text-slate-600">
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+              <form onSubmit={saveSettings} className="p-5">
+                <div className="mb-4">
+                  <label className="block text-sm font-bold text-slate-700 mb-2">Google Gemini API Key</label>
+                  <input 
+                    name="apiKey"
+                    type="password" 
+                    defaultValue={apiKey}
+                    placeholder="กรอก API Key ของคุณที่นี่..."
+                    className="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-teal-500 focus:border-teal-500 outline-none transition-all text-sm"
+                    required
+                  />
+                  <p className="mt-2 text-[12px] text-slate-500 leading-relaxed">
+                    คุณสามารถรับ API Key ได้ฟรีจาก <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" className="text-teal-600 underline">Google AI Studio</a>. คีย์นี้จะถูกเก็บไว้ในเบราว์เซอร์ของคุณเท่านั้น
+                  </p>
+                </div>
+                <div className="flex gap-3 mt-6">
+                  <button 
+                    type="button"
+                    onClick={() => setShowSettings(false)}
+                    className="flex-1 px-4 py-2 border border-slate-200 text-slate-600 font-bold rounded-lg hover:bg-slate-50 transition-colors text-sm"
+                  >
+                    ยกเลิก
+                  </button>
+                  <button 
+                    type="submit"
+                    className="flex-1 px-4 py-2 bg-teal-600 text-white font-bold rounded-lg hover:bg-teal-700 shadow-md transition-colors text-sm"
+                  >
+                    บันทึกการตั้งค่า
+                  </button>
+                </div>
+              </form>
             </motion.div>
           </div>
         )}
