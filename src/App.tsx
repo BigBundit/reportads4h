@@ -340,7 +340,7 @@ export default function App() {
               className={`bg-[#0866FF] hover:bg-blue-600 transition-colors px-3 py-2 md:py-1.5 rounded-md text-[13px] font-bold text-white flex items-center justify-center gap-1.5 shadow-sm flex-1 md:flex-initial ${isUploading ? 'opacity-70 pointer-events-none' : ''}`}
             >
               {isUploading ? <Loader2 className="w-4 h-4 animate-spin"/> : <Search className="w-4 h-4"/>}
-              <span className="md:hidden lg:inline">เริ่มวิเคราะห์จากลิงก์</span>
+              <span className="md:hidden lg:inline">เริ่มวิเคราะห์ 30วันย้อนหลัง</span>
             </button>
             <div className="relative group cursor-pointer flex-1 md:flex-initial">
               <input 
