@@ -72,11 +72,31 @@ const promptSchema = {
     updateDate: { type: Type.STRING },
     monthRange: { type: Type.STRING }
   }
+  }
+};
+
+const generateWithRetry = async (ai: any, params: any, setStatus: (msg: string) => void, maxRetries = 5) => {
+  for (let i = 0; i < maxRetries; i++) {
+    try {
+      if (i > 0) setStatus(`กำลังวิเคราะห์... (ลองใหม่ครั้งที่ ${i}/${maxRetries - 1})`);
+      const response = await ai.models.generateContent(params);
+      return response;
+    } catch (err: any) {
+      const isRateLimit = err.message?.includes('429') || err.message?.includes('quota') || err.message?.includes('Rate limit') || err.message?.includes('exhausted');
+      if (isRateLimit && i < maxRetries - 1) {
+        setStatus(`โควตาเต็ม รอ 15 วิ... (ลองใหม่ครั้งที่ ${i + 1}/${maxRetries - 1})`);
+        await new Promise(resolve => setTimeout(resolve, 15000));
+      } else {
+        throw err;
+      }
+    }
+  }
 };
 
 export default function App() {
   const [data, setData] = useState(initialData);
   const [isUploading, setIsUploading] = useState(false);
+  const [statusMsg, setStatusMsg] = useState('');
   const [modalData, setModalData] = useState<any>(null);
   const [fileName, setFileName] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
@@ -121,14 +141,15 @@ export default function App() {
       );
 
       const ai = new GoogleGenAI({ apiKey: currentKey });
+      setStatusMsg('กำลังวิเคราะห์...');
 
-      const response = await ai.models.generateContent({
+      const response = await generateWithRetry(ai, {
         model: 'gemini-2.0-flash',
         contents: [
           {
             parts: [
               { text: `You are a competitive intelligence analyst. Extract data from the provided PDF reports. 
-                Analyze the data specifically for the past 30 days (e.g., April 7, 2026 - May 7, 2026) or the most recent 30-day period available in the documents. Specify the exact date range in the monthRange output.
+                Analyze the data specifically for the past 7 days (e.g., May 1, 2026 - May 7, 2026) or the most recent 7-day period available in the documents. Specify the exact date range in the monthRange output.
                 Identify activity, pricing, strategy and ads for the following a hospitals: 
                 - BNH Hospital (bnh)
                 - Bangkok Hospital HQ (bkk)
@@ -150,7 +171,7 @@ export default function App() {
           responseMimeType: 'application/json',
           responseSchema: promptSchema
         }
-      });
+      }, setStatusMsg);
 
       const extractedData = JSON.parse(response.text.trim());
       
@@ -177,13 +198,14 @@ export default function App() {
       console.error(err);
       let msg = 'Failed to analyze PDF. Please try again. ';
       if (err.message?.includes('429') || err.message?.includes('quota')) {
-        msg = '⚠️ โควตา API เต็มชั่วคราว (Rate Limit) กรุณารอสัก 10-60 วินาทีแล้วลองใหม่ครับ';
+        msg = '⚠️ โควตา API เต็มชั่วคราวและระบบพยายามลองใหม่จนครบกำหนดแล้ว กรุณารอสักครู่แล้วลองใหม่ครับ';
       } else {
         msg += (err.message || '');
       }
       setErrorMsg(msg);
     } finally {
       setIsUploading(false);
+      setStatusMsg('');
       if (fileInputRef.current) fileInputRef.current.value = '';
     }
   };
@@ -201,21 +223,22 @@ export default function App() {
       }
 
       const ai = new GoogleGenAI({ apiKey: currentKey });
+      setStatusMsg('กำลังวิเคราะห์...');
       
-      const response = await ai.models.generateContent({
+      const response = await generateWithRetry(ai, {
         model: 'gemini-2.0-flash',
         contents: [
           {
             role: 'user',
             parts: [
-              { text: `You are a competitive intelligence analyst. Search the internet and analyze the current Facebook Ads and Google Ads strategies for the following hospitals in Thailand specifically focusing on the past 30 days (e.g., April 7, 2026 - May 7, 2026):
+              { text: `You are a competitive intelligence analyst. Search the internet and analyze the current Facebook Ads and Google Ads strategies for the following hospitals in Thailand specifically focusing on the past 7 days (e.g., May 1, 2026 - May 7, 2026):
                 - BNH Hospital (bnh)
                 - Bangkok Hospital HQ (bkk)
                 - Bumrungrad (bum)
                 - MedPark (med)
                 - Samitivej Sukhumvit (sam)
                 
-                Use Google Search to find recent news, promotions, and marketing campaigns from the last 30 days for these hospitals. Specify the exact 30-day date range in the monthRange output.
+                Use Google Search to find recent news, promotions, and marketing campaigns from the last 7 days for these hospitals. Specify the exact 7-day date range in the monthRange output.
                 CRITICAL: Provide 3-4 specific "BNH Strategic Next Steps". These should be actionable advice for BNH Hospital to stay competitive. 
                 For each step, provide a title, a detailed description (desc), a priority level, and a relevant emoji icon.
 
@@ -230,7 +253,7 @@ export default function App() {
           responseMimeType: 'application/json',
           responseSchema: promptSchema
         }
-      });
+      }, setStatusMsg);
 
       const extractedData = JSON.parse(response.text.trim());
       
@@ -256,13 +279,14 @@ export default function App() {
       console.error(err);
       let msg = 'Failed to analyze from URLs. Please try again. ';
       if (err.message?.includes('429') || err.message?.includes('quota')) {
-        msg = '⚠️ โควตา API เต็มชั่วคราว (Rate Limit) กรุณารอสัก 10-60 วินาทีแล้วลองใหม่ครับ';
+        msg = '⚠️ โควตา API เต็มชั่วคราวและระบบพยายามลองใหม่จนครบกำหนดแล้ว กรุณารอสักครู่แล้วลองใหม่ครับ';
       } else {
         msg += (err.message || '');
       }
       setErrorMsg(msg);
     } finally {
       setIsUploading(false);
+      setStatusMsg('');
     }
   };
 
@@ -340,7 +364,7 @@ export default function App() {
               className={`bg-[#0866FF] hover:bg-blue-600 transition-colors px-3 py-2 md:py-1.5 rounded-md text-[13px] font-bold text-white flex items-center justify-center gap-1.5 shadow-sm flex-1 md:flex-initial ${isUploading ? 'opacity-70 pointer-events-none' : ''}`}
             >
               {isUploading ? <Loader2 className="w-4 h-4 animate-spin"/> : <Search className="w-4 h-4"/>}
-              <span className="md:hidden lg:inline">เริ่มวิเคราะห์ 30วันย้อนหลัง</span>
+              <span className="md:hidden lg:inline">เริ่มวิเคราะห์ 7วันย้อนหลัง</span>
             </button>
             <div className="relative group cursor-pointer flex-1 md:flex-initial">
               <input 
@@ -365,6 +389,13 @@ export default function App() {
         <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 flex items-center gap-2 text-sm">
           <AlertCircle className="w-4 h-4 shrink-0" />
           {errorMsg}
+        </motion.div>
+      )}
+
+      {statusMsg && isUploading && (
+        <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-blue-700 flex items-center gap-2 text-sm">
+          <Loader2 className="w-4 h-4 shrink-0 animate-spin" />
+          {statusMsg}
         </motion.div>
       )}
 

@@ -371,7 +371,7 @@ export const initialData = {
     }
   ],
   updateDate: '7 พฤษภาคม 2569',
-  monthRange: 'ย้อนหลัง 30 วัน (7 เม.ย. - 7 พ.ค. 2569)',
+  monthRange: 'ย้อนหลัง 7 วัน (1 พ.ค. - 7 พ.ค. 2569)',
   bnhNextSteps: [
     {
       title: 'Counter-Offer: Premium Maternity & Pediatrics',
