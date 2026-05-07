@@ -72,7 +72,6 @@ const promptSchema = {
     updateDate: { type: Type.STRING },
     monthRange: { type: Type.STRING }
   }
-  }
 };
 
 const generateWithRetry = async (ai: any, params: any, setStatus: (msg: string) => void, maxRetries = 5) => {
