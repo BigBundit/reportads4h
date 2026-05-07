@@ -8,12 +8,12 @@ export const initialData = {
       bg: '#eff6ff',
       badgeBg: '#1e3a8a',
       borderTop: '#1e3a8a',
-      fbUrl: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&view_all_page_id=141870102521191&search_type=page',
+      fbUrl: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&is_targeted_country=false&media_type=all&q=bnhhospital.com&search_type=keyword_unordered&sort_data[direction]=desc&sort_data[mode]=total_impressions',
       count: '15',
       focusBadge: '🏥 Focus: Maternity & Women',
       focusColor: '#1d4ed8',
       buttonBg: '#eff6ff',
-      logo: 'https://www.bnhhospital.com/wp-content/uploads/2022/02/logo-bnh.png',
+      logo: 'https://www.bnhhospital.com/wp-content/uploads/2022/08/logo-bnh.png',
       ads: [
         {
           title: 'Maternity Package',
@@ -293,10 +293,10 @@ export const initialData = {
   competitorsData: [
     {
       name: 'โรงพยาบาลบีเอ็นเอช (BNH Hospital)',
-      logo: 'https://www.bnhhospital.com/wp-content/uploads/2022/02/logo-bnh.png',
+      logo: 'https://www.bnhhospital.com/wp-content/uploads/2022/08/logo-bnh.png',
       color: '#1e3a8a',
       links: [
-        { type: 'fb', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&view_all_page_id=141870102521191', text: 'FB Ads Library - Main Page' },
+        { type: 'fb', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&is_targeted_country=false&media_type=all&q=bnhhospital.com&search_type=keyword_unordered&sort_data[direction]=desc&sort_data[mode]=total_impressions', text: 'FB Ads Library - Main Page' },
         { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=bnhhospital.com', text: 'Google Ads - bnhhospital.com' },
       ]
     },
