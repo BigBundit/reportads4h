@@ -370,8 +370,8 @@ export const initialData = {
       ]
     }
   ],
-  updateDate: '22 เมษายน 2569',
-  monthRange: 'มีนาคม – เมษายน 2569',
+  updateDate: '7 พฤษภาคม 2569',
+  monthRange: 'ย้อนหลัง 30 วัน (7 เม.ย. - 7 พ.ค. 2569)',
   bnhNextSteps: [
     {
       title: 'Counter-Offer: Premium Inpatient Experience',

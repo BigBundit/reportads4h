@@ -85,17 +85,18 @@ export default function App() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+    const files = e.target.files;
+    if (!files || files.length === 0) return;
     
-    if (file.type !== 'application/pdf') {
-      setErrorMsg('Please upload a PDF file.');
+    const allPdfs = Array.from(files).every(file => file.type === 'application/pdf');
+    if (!allPdfs) {
+      setErrorMsg('Please upload only PDF files.');
       return;
     }
 
     setIsUploading(true);
     setErrorMsg('');
-    setFileName(file.name);
+    setFileName(files.length === 1 ? files[0].name : `${files.length} files`);
 
     try {
       const currentKey = apiKey || (process.env.GEMINI_API_KEY as string);
@@ -104,25 +105,30 @@ export default function App() {
         throw new Error('กรุณาตั้งค่า API Key ก่อนใช้งาน (ปุ่ม Settings มุมบนขวา)');
       }
 
-      const base64Data = await new Promise<string>((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-          const result = reader.result as string;
-          resolve(result.split(',')[1]);
-        };
-        reader.onerror = reject;
-      });
+      const fileParts = await Promise.all(
+        Array.from(files).map(async (file) => {
+          const base64Data = await new Promise<string>((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+              const result = reader.result as string;
+              resolve(result.split(',')[1]);
+            };
+            reader.onerror = reject;
+          });
+          return { inlineData: { mimeType: 'application/pdf', data: base64Data } };
+        })
+      );
 
       const ai = new GoogleGenAI({ apiKey: currentKey });
-      // Remove FB details and focus on dynamic data structure extraction
 
       const response = await ai.models.generateContent({
         model: 'gemini-2.0-flash',
         contents: [
           {
             parts: [
-              { text: `You are a competitive intelligence analyst. Extract data from the provided PDF report. 
+              { text: `You are a competitive intelligence analyst. Extract data from the provided PDF reports. 
+                Analyze the data specifically for the past 30 days (e.g., April 7, 2026 - May 7, 2026) or the most recent 30-day period available in the documents. Specify the exact date range in the monthRange output.
                 Identify activity, pricing, strategy and ads for the following a hospitals: 
                 - BNH Hospital (bnh)
                 - Bangkok Hospital HQ (bkk)
@@ -136,7 +142,7 @@ export default function App() {
                 For 'color' fields, use valid hex color codes that match the hospital brand or the specific context (e.g., #1e3a8a for bnh, #1A3B2B for bkk, #128A84 for bum, #E27447 for med, #7B4FA0 for sam).
                 Provide accurate findings. If pricing is absent for a hospital, say "ไม่ระบุ" for p1. Highlight notable promotions by putting them in p1/p2.
                 ` },
-              { inlineData: { mimeType: 'application/pdf', data: base64Data } }
+              ...fileParts
             ]
           }
         ],
@@ -202,14 +208,14 @@ export default function App() {
           {
             role: 'user',
             parts: [
-              { text: `You are a competitive intelligence analyst. Search the internet and analyze the current Facebook Ads and Google Ads strategies for the following hospitals in Thailand:
+              { text: `You are a competitive intelligence analyst. Search the internet and analyze the current Facebook Ads and Google Ads strategies for the following hospitals in Thailand specifically focusing on the past 30 days (e.g., April 7, 2026 - May 7, 2026):
                 - BNH Hospital (bnh)
                 - Bangkok Hospital HQ (bkk)
                 - Bumrungrad (bum)
                 - MedPark (med)
                 - Samitivej Sukhumvit (sam)
                 
-                Use Google Search to find recent news, promotions, and marketing campaigns for these hospitals.
+                Use Google Search to find recent news, promotions, and marketing campaigns from the last 30 days for these hospitals. Specify the exact 30-day date range in the monthRange output.
                 CRITICAL: Provide 3-4 specific "BNH Strategic Next Steps". These should be actionable advice for BNH Hospital to stay competitive. 
                 For each step, provide a title, a detailed description (desc), a priority level, and a relevant emoji icon.
 
@@ -339,6 +345,7 @@ export default function App() {
             <div className="relative group cursor-pointer flex-1 md:flex-initial">
               <input 
                 type="file" 
+                multiple
                 accept=".pdf" 
                 className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10" 
                 onChange={handleFileUpload} 
