@@ -52,6 +52,10 @@ export default function App() {
           hospitals: {
             type: Type.OBJECT,
             properties: {
+              bnh: {
+                type: Type.OBJECT,
+                properties: { count: { type: Type.STRING }, focusBadge: { type: Type.STRING }, ads: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { title: { type: Type.STRING }, platform: { type: Type.STRING }, date: { type: Type.STRING }, price: { type: Type.STRING }, target: { type: Type.STRING }, type: { type: Type.STRING }, color: { type: Type.STRING }, detail: { type: Type.STRING }, imgDesc: { type: Type.STRING }, cta: { type: Type.STRING } } } } }
+              },
               bkk: {
                 type: Type.OBJECT,
                 properties: { count: { type: Type.STRING }, focusBadge: { type: Type.STRING }, ads: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { title: { type: Type.STRING }, platform: { type: Type.STRING }, date: { type: Type.STRING }, price: { type: Type.STRING }, target: { type: Type.STRING }, type: { type: Type.STRING }, color: { type: Type.STRING }, detail: { type: Type.STRING }, imgDesc: { type: Type.STRING }, cta: { type: Type.STRING } } } } }
@@ -76,6 +80,7 @@ export default function App() {
               type: Type.OBJECT,
               properties: {
                 service: { type: Type.STRING },
+                bnh: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } },
                 bkk: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } },
                 bum: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } },
                 med: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } },
@@ -118,6 +123,7 @@ export default function App() {
             parts: [
               { text: `You are a competitive intelligence analyst. Extract data from the provided PDF report. 
                 Identify activity, pricing, strategy and ads for the following a hospitals: 
+                - BNH Hospital (bnh)
                 - Bangkok Hospital HQ (bkk)
                 - Bumrungrad (bum)
                 - MedPark (med)
@@ -126,7 +132,7 @@ export default function App() {
                 CRITICAL: Based on the competitors activity, provide 3-4 specific "BNH Strategic Next Steps". These should be actionable advice for BNH Hospital to stay competitive. 
                 For each step, provide a title, a detailed description (desc), a priority level, and a relevant emoji icon.
 
-                For 'color' fields, use valid hex color codes that match the hospital brand or the specific context (e.g., #1A3B2B for bkk, #128A84 for bum, #E27447 for med, #7B4FA0 for sam).
+                For 'color' fields, use valid hex color codes that match the hospital brand or the specific context (e.g., #1e3a8a for bnh, #1A3B2B for bkk, #128A84 for bum, #E27447 for med, #7B4FA0 for sam).
                 Provide accurate findings. If pricing is absent for a hospital, say "ไม่ระบุ" for p1. Highlight notable promotions by putting them in p1/p2.
                 ` },
               { inlineData: { mimeType: 'application/pdf', data: base64Data } }
@@ -145,6 +151,7 @@ export default function App() {
       const mergedData = {
         ...data,
         hospitals: {
+          bnh: { ...data.hospitals.bnh, ...extractedData.hospitals?.bnh },
           bkk: { ...data.hospitals.bkk, ...extractedData.hospitals?.bkk },
           bum: { ...data.hospitals.bum, ...extractedData.hospitals?.bum },
           med: { ...data.hospitals.med, ...extractedData.hospitals?.med },
@@ -185,7 +192,7 @@ export default function App() {
     setModalData(null);
   };
 
-  const hospKeys = ['bkk', 'bum', 'med', 'sam'] as const;
+  const hospKeys = ['bnh', 'bkk', 'bum', 'med', 'sam'] as const;
 
   const handleExportPDF = () => {
     window.print();
@@ -268,7 +275,7 @@ export default function App() {
       )}
 
       {/* SCORE CARDS */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-5">
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mb-5">
         {hospKeys.map(key => {
           const h = data.hospitals[key];
           return (
@@ -567,7 +574,7 @@ export default function App() {
           <ExternalLink className="w-4 h-4 text-teal-600" />
           <h2 className="text-[17px] font-bold text-slate-800 m-0">Section 5 · คู่แข่งที่ Focus & ลิงก์แหล่งอ้างอิง</h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
           {data.competitorsData.map((comp: any, i: number) => (
             <div key={i} className="border border-slate-200 rounded-lg p-3 shadow-sm relative flex flex-col h-full bg-slate-50/50">
               <div className="absolute top-0 left-0 w-1 h-full rounded-l-lg" style={{ backgroundColor: comp.color }}></div>

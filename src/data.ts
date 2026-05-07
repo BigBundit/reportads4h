@@ -1,5 +1,40 @@
 export const initialData = {
   hospitals: {
+    bnh: {
+      id: 'bnh',
+      name: 'โรงพยาบาลบีเอ็นเอช',
+      nameEn: 'BNH Hospital (@BNHhospital)',
+      color: '#1e3a8a',
+      bg: '#eff6ff',
+      badgeBg: '#1e3a8a',
+      borderTop: '#1e3a8a',
+      fbUrl: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&view_all_page_id=141870102521191&search_type=page',
+      count: '15',
+      focusBadge: '🏥 Focus: Maternity & Women',
+      focusColor: '#1d4ed8',
+      buttonBg: '#eff6ff',
+      logo: 'https://www.bnhhospital.com/wp-content/uploads/2022/02/logo-bnh.png',
+      ads: [
+        {
+          title: 'Maternity Package',
+          platform: 'FB+IG',
+          date: 'พ.ค. 2569',
+          price: 'เริ่มต้น 99,000',
+          target: 'คุณแม่ตั้งครรภ์',
+          type: 'Maternity',
+          color: '#1d4ed8',
+          detail: 'แพ็กเกจคลอดเหมาจ่าย ดูแลโดยทีมแพทย์เฉพาะทาง',
+          imgDesc: 'รูปภาพคุณแม่และเด็กทารก โลโก้ BNH',
+          cta: 'รายละเอียด'
+        }
+      ],
+      timeline: [
+        [ { text: '👶 Maternity', bg: '#1d4ed8', color: '#fff' } ],
+        [ { text: '👶 Maternity', bg: '#1d4ed8', color: '#fff' } ],
+        [ { text: '👶 Maternity', bg: '#1d4ed8', color: '#fff' } ],
+        [ { text: '👶 Maternity Active', bg: '#1d4ed8', color: '#fff' } ]
+      ]
+    },
     bkk: {
       id: 'bkk',
       name: 'โรงพยาบาลกรุงเทพ สำนักงานใหญ่',
@@ -238,11 +273,11 @@ export const initialData = {
     }
   },
   pricing: [
-    { service: '🩺 ตรวจสุขภาพ', bkk: { p1: 'ไม่ระบุราคาในแอด', p2: 'Focus: Corporate Package' }, bum: { p1: 'ไม่ระบุราคาในแอด', p2: 'Focus: Exclusive Screening' }, med: { p1: 'ไม่ระบุราคาในแอด', p2: '' }, sam: { p1: '฿6,000 (หญิง <30)', p2: '฿9,500 (ชาย <40)', highlight: true } },
-    { service: '🏥 ห้องพักผู้ป่วยใน', bkk: { p1: 'ไม่ระบุในแอด', p2: '' }, bum: { p1: 'ลด 20%', p2: '1 เม.ย.–31 พ.ค. 2569', highlight: true }, med: { p1: 'ไม่ระบุในแอด', p2: '' }, sam: { p1: 'ไม่ระบุในแอด', p2: '' } },
-    { service: '👁️ ศัลยกรรมสายตา', bkk: { p1: 'ไม่ระบุในแอด', p2: '' }, bum: { p1: 'ไม่ระบุในแอด', p2: '' }, med: { p1: '฿119,900', p2: 'SMILE Pro', highlight: true }, sam: { p1: 'ไม่ระบุในแอด', p2: '' } },
-    { service: '🧬 IVF / เด็กหลอดแก้ว', bkk: { p1: 'ไม่ระบุในแอด', p2: '' }, bum: { p1: 'ไม่ระบุในแอด', p2: '' }, med: { p1: 'กำหนดตามเคส', p2: '"ค่าใช้จ่ายไม่มีกำหนดเพิ่ม"', highlight: true }, sam: { p1: 'ไม่ระบุในแอด', p2: '' } },
-    { service: '❤️ TAVI Heart Surgery', bkk: { p1: 'ไม่ระบุราคา', p2: 'Focus: Second Opinion' }, bum: { p1: 'ไม่ระบุในแอด', p2: '' }, med: { p1: 'ไม่ระบุในแอด', p2: '' }, sam: { p1: 'ปรึกษาแพทย์', p2: 'TAVI Heart Center', highlight: true } }
+    { service: '🩺 ตรวจสุขภาพ', bnh: { p1: 'ไม่ระบุ', p2: '' }, bkk: { p1: 'ไม่ระบุราคาในแอด', p2: 'Focus: Corporate Package' }, bum: { p1: 'ไม่ระบุราคาในแอด', p2: 'Focus: Exclusive Screening' }, med: { p1: 'ไม่ระบุราคาในแอด', p2: '' }, sam: { p1: '฿6,000 (หญิง <30)', p2: '฿9,500 (ชาย <40)', highlight: true } },
+    { service: '🏥 ห้องพักผู้ป่วยใน', bnh: { p1: 'ไม่ระบุ', p2: '' }, bkk: { p1: 'ไม่ระบุในแอด', p2: '' }, bum: { p1: 'ลด 20%', p2: '1 เม.ย.–31 พ.ค. 2569', highlight: true }, med: { p1: 'ไม่ระบุในแอด', p2: '' }, sam: { p1: 'ไม่ระบุในแอด', p2: '' } },
+    { service: '👁️ ศัลยกรรมสายตา', bnh: { p1: 'ไม่ระบุ', p2: '' }, bkk: { p1: 'ไม่ระบุในแอด', p2: '' }, bum: { p1: 'ไม่ระบุในแอด', p2: '' }, med: { p1: '฿119,900', p2: 'SMILE Pro', highlight: true }, sam: { p1: 'ไม่ระบุในแอด', p2: '' } },
+    { service: '🧬 IVF / เด็กหลอดแก้ว', bnh: { p1: 'ไม่ระบุ', p2: '' }, bkk: { p1: 'ไม่ระบุในแอด', p2: '' }, bum: { p1: 'ไม่ระบุในแอด', p2: '' }, med: { p1: 'กำหนดตามเคส', p2: '"ค่าใช้จ่ายไม่มีกำหนดเพิ่ม"', highlight: true }, sam: { p1: 'ไม่ระบุในแอด', p2: '' } },
+    { service: '❤️ TAVI Heart Surgery', bnh: { p1: 'ไม่ระบุ', p2: '' }, bkk: { p1: 'ไม่ระบุราคา', p2: 'Focus: Second Opinion' }, bum: { p1: 'ไม่ระบุในแอด', p2: '' }, med: { p1: 'ไม่ระบุในแอด', p2: '' }, sam: { p1: 'ปรึกษาแพทย์', p2: 'TAVI Heart Center', highlight: true } }
   ],
   implications: [
     { icon: '🚀', title: '1. Bumrungrad ใช้ Price Promotion หนักช่วง Low Season', border: '#128A84', bg: '#f0f9f8', color: '#0f766e', desc: 'การยิงแอด 20% off ห้องพักผู้ป่วยใน (เม.ย.–พ.ค.) เป็นกลยุทธ์ดึง International Patients ช่วง Low Season BNH ควรพิจารณา Counter Offer ที่แข่งขันได้' },
@@ -256,6 +291,15 @@ export const initialData = {
     'W4 · 14–22 เม.ย. 2569 🔴 ล่าสุด'
   ],
   competitorsData: [
+    {
+      name: 'โรงพยาบาลบีเอ็นเอช (BNH Hospital)',
+      logo: 'https://www.bnhhospital.com/wp-content/uploads/2022/02/logo-bnh.png',
+      color: '#1e3a8a',
+      links: [
+        { type: 'fb', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&view_all_page_id=141870102521191', text: 'FB Ads Library - Main Page' },
+        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=bnhhospital.com', text: 'Google Ads - bnhhospital.com' },
+      ]
+    },
     {
       name: 'โรงพยาบาลกรุงเทพ สำนักงานใหญ่ (Bangkok Hospital)',
       logo: 'https://static.bangkokhospital.com/uploads/2024/04/BGHlogo.svg',
