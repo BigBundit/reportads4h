@@ -9,30 +9,54 @@ export const initialData = {
       badgeBg: '#1e3a8a',
       borderTop: '#1e3a8a',
       fbUrl: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&is_targeted_country=false&media_type=all&q=bnhhospital.com&search_type=keyword_unordered&sort_data[direction]=desc&sort_data[mode]=total_impressions',
-      count: '15',
-      focusBadge: '🏥 Focus: Maternity & Women',
+      count: '42',
+      focusBadge: '🏥 Focus: Cancer & Neuroscience',
       focusColor: '#1d4ed8',
       buttonBg: '#eff6ff',
       logo: 'https://www.bnhhospital.com/wp-content/uploads/2022/08/logo-bnh.png',
       ads: [
         {
-          title: 'Maternity Package',
+          title: 'SPOT-MAS Cancer Screening',
           platform: 'FB+IG',
           date: 'พ.ค. 2569',
-          price: 'เริ่มต้น 99,000',
-          target: 'คุณแม่ตั้งครรภ์',
-          type: 'Maternity',
+          price: '17,500 THB',
+          target: 'อายุ 40 ปีขึ้นไป',
+          type: 'Cancer Screening',
           color: '#1d4ed8',
-          detail: 'แพ็กเกจคลอดเหมาจ่าย ดูแลโดยทีมแพทย์เฉพาะทาง',
-          imgDesc: 'รูปภาพคุณแม่และเด็กทารก โลโก้ BNH',
+          detail: 'ตรวจคัดกรองความเสี่ยงมะเร็ง 10 ชนิดก่อนมีอาการ ด้วยเทคโนโลยีเจาะเลือด (ลดจาก 24,520 THB)',
+          imgDesc: 'โปรโมชัน SPOT-MAS 17,500 บาท',
           cta: 'รายละเอียด'
+        },
+        {
+          title: 'BNH Neuroscience Centre',
+          platform: 'FB+IG',
+          date: 'พ.ค. 2569',
+          price: 'ไม่ระบุ',
+          target: 'ผู้มีปัญหาความจำ, ปวดหัว',
+          type: 'Neuroscience',
+          color: '#1d4ed8',
+          detail: 'ดูแลสุขภาพสมองแบบบูรณาการโดยทีมแพทย์เฉพาะทาง มีเทคโนโลยี TPS',
+          imgDesc: 'ทีมแพทย์และเทคโนโลยี TPS',
+          cta: 'รายละเอียด'
+        },
+        {
+          title: 'Gastrointestinal Health',
+          platform: 'FB+IG',
+          date: 'พ.ค. 2569',
+          price: '1-day complete',
+          target: 'วัยทำงาน',
+          type: 'GI',
+          color: '#1d4ed8',
+          detail: 'ส่องกล้องกระเพาะอาหารและลำไส้ใหญ่ แบบ 1-day complete',
+          imgDesc: 'วัยทำงานที่มีอาการปวดท้อง',
+          cta: 'จองเลย'
         }
       ],
       timeline: [
-        [ { text: '👶 Maternity', bg: '#1d4ed8', color: '#fff' } ],
-        [ { text: '👶 Maternity', bg: '#1d4ed8', color: '#fff' } ],
-        [ { text: '👶 Maternity', bg: '#1d4ed8', color: '#fff' } ],
-        [ { text: '👶 Maternity Active', bg: '#1d4ed8', color: '#fff' } ]
+        [ { text: '🧬 Cancer: SPOT-MAS', bg: '#1d4ed8', color: '#fff' } ],
+        [ { text: '🧠 Neuro Center', bg: '#1d4ed8', color: '#fff' } ],
+        [ { text: '🩺 GI: ส่องกล้อง', bg: '#1d4ed8', color: '#fff' } ],
+        [ { text: '🏥 42 Active Ads', bg: '#1d4ed8', color: '#fff' } ]
       ]
     },
     bkk: {
