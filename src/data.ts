@@ -77,7 +77,7 @@ export const initialData = {
         {
           title: 'Second Opinion ปรึกษาฟรีก่อนผ่าตัด',
           platform: 'Facebook + IG',
-          date: 'มี.ค. 2569',
+          date: 'พ.ค. 2569',
           price: 'ปรึกษาฟรี',
           target: 'ผู้ป่วยที่ต้องการผ่าตัด',
           type: 'Surgery',
@@ -89,7 +89,7 @@ export const initialData = {
         {
           title: 'Better Club B Point สมัครสมาชิก',
           platform: 'Facebook + IG',
-          date: 'มี.ค. 2569',
+          date: 'พ.ค. 2569',
           price: 'ฟรี',
           target: 'ผู้ใช้บริการทั่วไป',
           type: 'Loyalty',
@@ -101,7 +101,7 @@ export const initialData = {
         {
           title: 'ผ่าตัดที่ใช่ ไม่ใช่แค่หาย — CoE',
           platform: 'Facebook + IG',
-          date: 'มี.ค. 2569',
+          date: 'พ.ค. 2569',
           price: 'Get promotion',
           target: 'ผู้ต้องการผ่าตัด',
           type: 'Surgery CoE',
@@ -136,7 +136,7 @@ export const initialData = {
         {
           title: 'ส่วนลด 20% ค่าห้องพักผู้ป่วยใน (EN)',
           platform: 'FB+IG+Threads',
-          date: '14 เม.ย. 2569',
+          date: '1 พ.ค. 2569',
           price: '20% off',
           target: 'International',
           type: 'Promotion',
@@ -148,7 +148,7 @@ export const initialData = {
         {
           title: 'ส่วนลด 20% ค่าห้องพักผู้ป่วยใน (TH)',
           platform: 'FB+IG+Threads',
-          date: '14 เม.ย. 2569',
+          date: '1 พ.ค. 2569',
           price: 'ลด 20%',
           target: 'General',
           type: 'Promotion',
@@ -160,7 +160,7 @@ export const initialData = {
         {
           title: 'Stay Strong with Trusted Healthcare',
           platform: 'FB+IG+Threads',
-          date: '14 เม.ย. 2569',
+          date: '1 พ.ค. 2569',
           price: '',
           target: '',
           type: 'Brand',
@@ -195,7 +195,7 @@ export const initialData = {
         {
           title: 'IVF & ICSI เด็กหลอดแก้ว',
           platform: 'IG',
-          date: 'ก.พ. 2569',
+          date: 'พ.ค. 2569',
           price: '',
           target: '',
           type: 'Fertility',
@@ -207,7 +207,7 @@ export const initialData = {
         {
           title: 'Life, Back to Normal — Adman Awards',
           platform: 'FB+IG+Threads+X',
-          date: 'ม.ค. 2569',
+          date: 'พ.ค. 2569',
           price: '',
           target: '',
           type: 'Brand Award',
@@ -219,7 +219,7 @@ export const initialData = {
         {
           title: 'SMILE Pro ศัลยกรรมสายตา',
           platform: 'FB+IG',
-          date: 'ม.ค. 2569',
+          date: 'พ.ค. 2569',
           price: '฿119,900',
           target: '',
           type: 'Eye Surgery',
@@ -254,7 +254,7 @@ export const initialData = {
         {
           title: 'Health Check-up ผู้หญิง <30 ปี',
           platform: 'FB+IG+Threads+X',
-          date: '7 ม.ค. 2569',
+          date: 'พ.ค. 2569',
           price: '฿6,000',
           target: '',
           type: 'Check-up',
@@ -266,7 +266,7 @@ export const initialData = {
         {
           title: 'Health Check-up ผู้ชาย <40 ปี',
           platform: 'FB+IG+Threads+X',
-          date: '7 ม.ค. 2569',
+          date: 'พ.ค. 2569',
           price: '฿9,500',
           target: '',
           type: 'Check-up',
@@ -278,7 +278,7 @@ export const initialData = {
         {
           title: 'TAVI vs Open-Heart Surgery',
           platform: 'FB+IG+Threads+X',
-          date: '9 มี.ค. 2569',
+          date: 'พ.ค. 2569',
           price: '',
           target: '',
           type: 'Heart',

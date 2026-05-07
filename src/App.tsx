@@ -1,8 +1,78 @@
 import React, { useState, useRef } from 'react';
 import { initialData } from './data';
 import { GoogleGenAI, Type } from '@google/genai';
-import { Upload, File, Loader2, X, AlertCircle, BarChart2, FileText, Settings, ExternalLink, Download } from 'lucide-react';
+import { Upload, File, Loader2, X, AlertCircle, BarChart2, FileText, Settings, ExternalLink, Download, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+
+const promptSchema = {
+  type: Type.OBJECT,
+  properties: {
+    hospitals: {
+      type: Type.OBJECT,
+      properties: {
+        bnh: {
+          type: Type.OBJECT,
+          properties: { count: { type: Type.STRING }, focusBadge: { type: Type.STRING }, ads: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { title: { type: Type.STRING }, platform: { type: Type.STRING }, date: { type: Type.STRING }, price: { type: Type.STRING }, target: { type: Type.STRING }, type: { type: Type.STRING }, color: { type: Type.STRING }, detail: { type: Type.STRING }, imgDesc: { type: Type.STRING }, cta: { type: Type.STRING } } } } }
+        },
+        bkk: {
+          type: Type.OBJECT,
+          properties: { count: { type: Type.STRING }, focusBadge: { type: Type.STRING }, ads: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { title: { type: Type.STRING }, platform: { type: Type.STRING }, date: { type: Type.STRING }, price: { type: Type.STRING }, target: { type: Type.STRING }, type: { type: Type.STRING }, color: { type: Type.STRING }, detail: { type: Type.STRING }, imgDesc: { type: Type.STRING }, cta: { type: Type.STRING } } } } }
+        },
+        bum: {
+          type: Type.OBJECT,
+          properties: { count: { type: Type.STRING }, focusBadge: { type: Type.STRING }, ads: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { title: { type: Type.STRING }, platform: { type: Type.STRING }, date: { type: Type.STRING }, price: { type: Type.STRING }, target: { type: Type.STRING }, type: { type: Type.STRING }, color: { type: Type.STRING }, detail: { type: Type.STRING }, imgDesc: { type: Type.STRING }, cta: { type: Type.STRING } } } } }
+        },
+        med: {
+          type: Type.OBJECT,
+          properties: { count: { type: Type.STRING }, focusBadge: { type: Type.STRING }, ads: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { title: { type: Type.STRING }, platform: { type: Type.STRING }, date: { type: Type.STRING }, price: { type: Type.STRING }, target: { type: Type.STRING }, type: { type: Type.STRING }, color: { type: Type.STRING }, detail: { type: Type.STRING }, imgDesc: { type: Type.STRING }, cta: { type: Type.STRING } } } } }
+        },
+        sam: {
+          type: Type.OBJECT,
+          properties: { count: { type: Type.STRING }, focusBadge: { type: Type.STRING }, ads: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { title: { type: Type.STRING }, platform: { type: Type.STRING }, date: { type: Type.STRING }, price: { type: Type.STRING }, target: { type: Type.STRING }, type: { type: Type.STRING }, color: { type: Type.STRING }, detail: { type: Type.STRING }, imgDesc: { type: Type.STRING }, cta: { type: Type.STRING } } } } }
+        }
+      }
+    },
+    pricing: {
+      type: Type.ARRAY,
+      items: {
+        type: Type.OBJECT,
+        properties: {
+          service: { type: Type.STRING },
+          bnh: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } },
+          bkk: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } },
+          bum: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } },
+          med: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } },
+          sam: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } }
+        }
+      }
+    },
+    implications: {
+      type: Type.ARRAY,
+      items: {
+        type: Type.OBJECT,
+        properties: { icon: { type: Type.STRING }, title: { type: Type.STRING }, desc: { type: Type.STRING }, border: { type: Type.STRING }, bg: { type: Type.STRING }, color: { type: Type.STRING } }
+      }
+    },
+    timelineHeaders: {
+      type: Type.ARRAY,
+      items: { type: Type.STRING }
+    },
+    bnhNextSteps: {
+      type: Type.ARRAY,
+      items: {
+        type: Type.OBJECT,
+        properties: { 
+          title: { type: Type.STRING }, 
+          desc: { type: Type.STRING },
+          priority: { type: Type.STRING }, // 'High', 'Medium', 'Low'
+          icon: { type: Type.STRING }
+        }
+      }
+    },
+    updateDate: { type: Type.STRING },
+    monthRange: { type: Type.STRING }
+  }
+};
 
 export default function App() {
   const [data, setData] = useState(initialData);
@@ -46,75 +116,6 @@ export default function App() {
 
       const ai = new GoogleGenAI({ apiKey: currentKey });
       // Remove FB details and focus on dynamic data structure extraction
-      const promptSchema = {
-        type: Type.OBJECT,
-        properties: {
-          hospitals: {
-            type: Type.OBJECT,
-            properties: {
-              bnh: {
-                type: Type.OBJECT,
-                properties: { count: { type: Type.STRING }, focusBadge: { type: Type.STRING }, ads: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { title: { type: Type.STRING }, platform: { type: Type.STRING }, date: { type: Type.STRING }, price: { type: Type.STRING }, target: { type: Type.STRING }, type: { type: Type.STRING }, color: { type: Type.STRING }, detail: { type: Type.STRING }, imgDesc: { type: Type.STRING }, cta: { type: Type.STRING } } } } }
-              },
-              bkk: {
-                type: Type.OBJECT,
-                properties: { count: { type: Type.STRING }, focusBadge: { type: Type.STRING }, ads: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { title: { type: Type.STRING }, platform: { type: Type.STRING }, date: { type: Type.STRING }, price: { type: Type.STRING }, target: { type: Type.STRING }, type: { type: Type.STRING }, color: { type: Type.STRING }, detail: { type: Type.STRING }, imgDesc: { type: Type.STRING }, cta: { type: Type.STRING } } } } }
-              },
-              bum: {
-                type: Type.OBJECT,
-                properties: { count: { type: Type.STRING }, focusBadge: { type: Type.STRING }, ads: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { title: { type: Type.STRING }, platform: { type: Type.STRING }, date: { type: Type.STRING }, price: { type: Type.STRING }, target: { type: Type.STRING }, type: { type: Type.STRING }, color: { type: Type.STRING }, detail: { type: Type.STRING }, imgDesc: { type: Type.STRING }, cta: { type: Type.STRING } } } } }
-              },
-              med: {
-                type: Type.OBJECT,
-                properties: { count: { type: Type.STRING }, focusBadge: { type: Type.STRING }, ads: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { title: { type: Type.STRING }, platform: { type: Type.STRING }, date: { type: Type.STRING }, price: { type: Type.STRING }, target: { type: Type.STRING }, type: { type: Type.STRING }, color: { type: Type.STRING }, detail: { type: Type.STRING }, imgDesc: { type: Type.STRING }, cta: { type: Type.STRING } } } } }
-              },
-              sam: {
-                type: Type.OBJECT,
-                properties: { count: { type: Type.STRING }, focusBadge: { type: Type.STRING }, ads: { type: Type.ARRAY, items: { type: Type.OBJECT, properties: { title: { type: Type.STRING }, platform: { type: Type.STRING }, date: { type: Type.STRING }, price: { type: Type.STRING }, target: { type: Type.STRING }, type: { type: Type.STRING }, color: { type: Type.STRING }, detail: { type: Type.STRING }, imgDesc: { type: Type.STRING }, cta: { type: Type.STRING } } } } }
-              }
-            }
-          },
-          pricing: {
-            type: Type.ARRAY,
-            items: {
-              type: Type.OBJECT,
-              properties: {
-                service: { type: Type.STRING },
-                bnh: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } },
-                bkk: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } },
-                bum: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } },
-                med: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } },
-                sam: { type: Type.OBJECT, properties: { p1: { type: Type.STRING }, p2: { type: Type.STRING } } }
-              }
-            }
-          },
-          implications: {
-            type: Type.ARRAY,
-            items: {
-              type: Type.OBJECT,
-              properties: { icon: { type: Type.STRING }, title: { type: Type.STRING }, desc: { type: Type.STRING }, border: { type: Type.STRING }, bg: { type: Type.STRING }, color: { type: Type.STRING } }
-            }
-          },
-          timelineHeaders: {
-            type: Type.ARRAY,
-            items: { type: Type.STRING }
-          },
-          bnhNextSteps: {
-            type: Type.ARRAY,
-            items: {
-              type: Type.OBJECT,
-              properties: { 
-                title: { type: Type.STRING }, 
-                desc: { type: Type.STRING },
-                priority: { type: Type.STRING }, // 'High', 'Medium', 'Low'
-                icon: { type: Type.STRING }
-              }
-            }
-          },
-          updateDate: { type: Type.STRING },
-          monthRange: { type: Type.STRING }
-        }
-      };
 
       const response = await ai.models.generateContent({
         model: 'gemini-2.0-flash',
@@ -178,6 +179,84 @@ export default function App() {
     } finally {
       setIsUploading(false);
       if (fileInputRef.current) fileInputRef.current.value = '';
+    }
+  };
+
+  const handleLiveAnalysis = async () => {
+    setIsUploading(true);
+    setErrorMsg('');
+    setFileName('Live Search URLs');
+
+    try {
+      const currentKey = apiKey || (process.env.GEMINI_API_KEY as string);
+      
+      if (!currentKey || currentKey === 'undefined') {
+        throw new Error('กรุณาตั้งค่า API Key ก่อนใช้งาน (ปุ่ม Settings มุมบนขวา)');
+      }
+
+      const ai = new GoogleGenAI({ apiKey: currentKey });
+      
+      const response = await ai.models.generateContent({
+        model: 'gemini-2.0-flash',
+        contents: [
+          {
+            role: 'user',
+            parts: [
+              { text: `You are a competitive intelligence analyst. Search the internet and analyze the current Facebook Ads and Google Ads strategies for the following hospitals in Thailand:
+                - BNH Hospital (bnh)
+                - Bangkok Hospital HQ (bkk)
+                - Bumrungrad (bum)
+                - MedPark (med)
+                - Samitivej Sukhumvit (sam)
+                
+                Use Google Search to find recent news, promotions, and marketing campaigns for these hospitals.
+                CRITICAL: Provide 3-4 specific "BNH Strategic Next Steps". These should be actionable advice for BNH Hospital to stay competitive. 
+                For each step, provide a title, a detailed description (desc), a priority level, and a relevant emoji icon.
+
+                For 'color' fields, use valid hex color codes that match the hospital brand or the specific context (e.g., #1e3a8a for bnh, #1A3B2B for bkk, #128A84 for bum, #E27447 for med, #7B4FA0 for sam).
+                Provide accurate findings based on search results.
+                ` }
+            ]
+          }
+        ],
+        tools: [{ googleSearch: {} }],
+        config: {
+          responseMimeType: 'application/json',
+          responseSchema: promptSchema
+        }
+      });
+
+      const extractedData = JSON.parse(response.text.trim());
+      
+      const mergedData = {
+        ...data,
+        hospitals: {
+          bnh: { ...data.hospitals.bnh, ...extractedData.hospitals?.bnh },
+          bkk: { ...data.hospitals.bkk, ...extractedData.hospitals?.bkk },
+          bum: { ...data.hospitals.bum, ...extractedData.hospitals?.bum },
+          med: { ...data.hospitals.med, ...extractedData.hospitals?.med },
+          sam: { ...data.hospitals.sam, ...extractedData.hospitals?.sam }
+        },
+        pricing: extractedData.pricing || data.pricing,
+        implications: extractedData.implications || data.implications,
+        timelineHeaders: extractedData.timelineHeaders || data.timelineHeaders,
+        bnhNextSteps: extractedData.bnhNextSteps || data.bnhNextSteps,
+        updateDate: new Date().toLocaleDateString('th-TH', { day: 'numeric', month: 'long', year: 'numeric' }),
+        monthRange: 'Live Update'
+      };
+
+      setData(mergedData);
+    } catch (err: any) {
+      console.error(err);
+      let msg = 'Failed to analyze from URLs. Please try again. ';
+      if (err.message?.includes('429') || err.message?.includes('quota')) {
+        msg = '⚠️ โควตา API เต็มชั่วคราว (Rate Limit) กรุณารอสัก 10-60 วินาทีแล้วลองใหม่ครับ';
+      } else {
+        msg += (err.message || '');
+      }
+      setErrorMsg(msg);
+    } finally {
+      setIsUploading(false);
     }
   };
 
@@ -248,6 +327,14 @@ export default function App() {
             >
               <Download className="w-4 h-4"/> 
               <span className="md:hidden lg:inline">Export PDF</span>
+            </button>
+            <button 
+              onClick={handleLiveAnalysis}
+              disabled={isUploading}
+              className={`bg-[#0866FF] hover:bg-blue-600 transition-colors px-3 py-2 md:py-1.5 rounded-md text-[13px] font-bold text-white flex items-center justify-center gap-1.5 shadow-sm flex-1 md:flex-initial ${isUploading ? 'opacity-70 pointer-events-none' : ''}`}
+            >
+              {isUploading ? <Loader2 className="w-4 h-4 animate-spin"/> : <Search className="w-4 h-4"/>}
+              <span className="md:hidden lg:inline">เริ่มวิเคราะห์จากลิงก์</span>
             </button>
             <div className="relative group cursor-pointer flex-1 md:flex-initial">
               <input 
