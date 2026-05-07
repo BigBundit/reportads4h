@@ -321,7 +321,7 @@ export const initialData = {
       color: '#1e3a8a',
       links: [
         { type: 'fb', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&is_targeted_country=false&media_type=all&q=bnhhospital.com&search_type=keyword_unordered&sort_data[direction]=desc&sort_data[mode]=total_impressions', text: 'FB Ads Library - Main Page' },
-        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=bnhhospital.com', text: 'Google Ads - bnhhospital.com' },
+        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=bnhhospital.com', text: 'Google Ads - bnhhospital.com' },
       ]
     },
     {
@@ -330,7 +330,7 @@ export const initialData = {
       color: '#1A3B2B',
       links: [
         { type: 'fb', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&is_targeted_country=false&media_type=all&search_type=page&sort_data%5Bmode%5D=total_impressions&sort_data%5Bdirection%5D=desc&view_all_page_id=98150133139', text: 'FB Ads Library - Main Page' },
-        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=bangkokhospital.com', text: 'Google Ads Transparency - bangkokhospital.com' },
+        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=bangkokhospital.com', text: 'Google Ads Transparency - bangkokhospital.com' },
       ]
     },
     {
@@ -340,8 +340,8 @@ export const initialData = {
       links: [
         { type: 'fb', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&is_targeted_country=false&media_type=all&search_type=page&sort_data%5Bdirection%5D=desc&sort_data%5Bmode%5D=total_impressions&view_all_page_id=162830794940', text: 'FB Ads Library - Main Page' },
         { type: 'fb', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&is_targeted_country=false&media_type=all&search_type=page&sort_data%5Bdirection%5D=desc&sort_data%5Bmode%5D=total_impressions&view_all_page_id=376205882497477', text: 'FB Ads Library - Secondary Page' },
-        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=bumrungrad.com', text: 'Google Ads - bumrungrad.com' },
-        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg', url: 'https://adstransparency.google.com/advertiser/AR07841287088971448321?region=anywhere&preset-date=Last+7+days', text: 'Google Ads - Advertiser ID' },
+        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=bumrungrad.com', text: 'Google Ads - bumrungrad.com' },
+        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg', url: 'https://adstransparency.google.com/advertiser/AR07841287088971448321?region=anywhere&preset-date=Last+7+days', text: 'Google Ads - Advertiser ID' },
       ]
     },
     {
@@ -351,7 +351,7 @@ export const initialData = {
       links: [
         { type: 'fb', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&is_targeted_country=false&media_type=all&search_type=page&sort_data%5Bdirection%5D=desc&sort_data%5Bmode%5D=total_impressions&view_all_page_id=110584567075157', text: 'FB Ads Library - Main Page' },
         { type: 'fb', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&is_targeted_country=false&media_type=all&search_type=page&sort_data%5Bdirection%5D=desc&sort_data%5Bmode%5D=total_impressions&view_all_page_id=107541424743908', text: 'FB Ads Library - Secondary Page' },
-        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=medparkhospital.com', text: 'Google Ads - medparkhospital.com' },
+        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=medparkhospital.com', text: 'Google Ads - medparkhospital.com' },
       ]
     },
     {
@@ -364,9 +364,9 @@ export const initialData = {
         { type: 'fb', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&is_targeted_country=false&media_type=all&search_type=page&sort_data%5Bdirection%5D=desc&sort_data%5Bmode%5D=total_impressions&view_all_page_id=166580693725049', text: 'FB Ads - Page 3' },
         { type: 'fb', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&is_targeted_country=false&media_type=all&search_type=page&sort_data%5Bdirection%5D=desc&sort_data%5Bmode%5D=total_impressions&view_all_page_id=456128984802527', text: 'FB Ads - Page 4' },
         { type: 'fb', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&is_targeted_country=false&media_type=all&search_type=page&sort_data%5Bdirection%5D=desc&sort_data%5Bmode%5D=total_impressions&view_all_page_id=180515832148454', text: 'FB Ads - Page 5' },
-        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=samitivejhospitals.com', text: 'Google Ads - samitivejhospitals.com' },
-        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=samitivejhospital-bangladesh.com', text: 'Google Ads - bangladesh' },
-        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg', url: 'https://adstransparency.google.com/advertiser/AR08900963204314693633?region=anywhere&preset-date=Last+7+days', text: 'Google Ads - Advertiser ID' },
+        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=samitivejhospitals.com', text: 'Google Ads - samitivejhospitals.com' },
+        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg', url: 'https://adstransparency.google.com/?region=anywhere&preset-date=Last+7+days&domain=samitivejhospital-bangladesh.com', text: 'Google Ads - bangladesh' },
+        { type: 'gg', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg', url: 'https://adstransparency.google.com/advertiser/AR08900963204314693633?region=anywhere&preset-date=Last+7+days', text: 'Google Ads - Advertiser ID' },
       ]
     }
   ],
