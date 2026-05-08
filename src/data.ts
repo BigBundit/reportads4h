@@ -9,54 +9,54 @@ export const initialData = {
       badgeBg: '#1e3a8a',
       borderTop: '#1e3a8a',
       fbUrl: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&is_targeted_country=false&media_type=all&q=bnhhospital.com&search_type=keyword_unordered&sort_data[direction]=desc&sort_data[mode]=total_impressions',
-      count: '45',
-      focusBadge: '🏥 Focus: Cancer & Check-up',
+      count: '32',
+      focusBadge: '🏥 Focus: Check-up & Gastro',
       focusColor: '#1d4ed8',
       buttonBg: '#eff6ff',
       logo: 'https://www.bnhhospital.com/wp-content/uploads/2022/08/logo-bnh.png',
       ads: [
         {
-          title: 'M-CODE ตรวจยีนมะเร็ง',
+          title: 'BDMS Gastro & Colonoscopy',
           platform: 'Facebook + IG',
           date: 'พ.ค. 2569',
-          price: 'เริ่มต้น ฿15,900',
-          target: 'กลุ่มเสี่ยงมะเร็งพันธุกรรม',
-          type: 'Genetics',
+          price: 'แพ็กเกจราคาพิเศษ',
+          target: 'กลุ่มเสี่ยงและผู้ใส่ใจสุขภาพลำไส้',
+          type: 'Gastro',
           color: '#1e3a8a',
-          detail: 'ตรวจรหัสพันธุกรรม ค้นหาความเสี่ยงมะเร็ง 70 ชนิด เพื่อการป้องกันอย่างตรงจุด',
-          imgDesc: 'Banner สีกรมท่า-ทอง รูป DNA และครอบครัว',
-          cta: 'สอบถามเพิ่มเติม'
+          detail: 'ตรวจคัดกรองมะเร็งลำไส้ใหญ่และกระเพาะอาหาร รับฟรี Triple Biotic (ถึง 30 มิ.ย.)',
+          imgDesc: 'แบนเนอร์ BDMS Gastro สีน้ำเงิน-ขาว พร้อมภาพของแถม Triple Biotic',
+          cta: 'ดูรายละเอียด'
         },
         {
-          title: 'โปรแกรมตรวจสุขภาพ BNH',
-          platform: 'Google Search',
+          title: 'Visa Card Privileges 2026',
+          platform: 'Google Search + FB',
           date: 'พ.ค. 2569',
-          price: '฿7,900 - ฿25,900',
-          target: 'วัยทำงาน & ผู้สูงอายุ',
+          price: 'ส่วนลดสูงสุด 40%',
+          target: 'Expat / นักท่องเที่ยวต่างชาติ',
+          type: 'Corporate/Partner',
+          color: '#1e3a8a',
+          detail: 'ลด 40% สำหรับ TailorMade Health Check-up และลดค่าห้องพัก 15% (ถึงสิ้นปี 2569)',
+          imgDesc: 'แบนเนอร์ภาษาอังกฤษ BNH x VISA พร้อมโลโก้ VISA และรูปคนไข้',
+          cta: 'Learn More'
+        },
+        {
+          title: 'Upgraded Annual Check-up',
+          platform: 'Facebook',
+          date: 'พ.ค. 2569',
+          price: 'ตามแพ็กเกจ (Explorer, Builder)',
+          target: 'วัยทำงานทุกช่วงอายุ',
           type: 'Check-up',
           color: '#1e3a8a',
-          detail: 'Executive Health Check-up ครอบคลุมการตรวจหัวใจและหลอดเลือด',
-          imgDesc: 'Text Ad: "แพ็กเกจตรวจสุขภาพ รพ. BNH - แม่นยำ ครบถ้วน"',
-          cta: 'Book Now'
-        },
-        {
-          title: 'ศูนย์กระดูกสันหลังและข้อ',
-          platform: 'Facebook Video',
-          date: 'เม.ย. 2569',
-          price: 'ปรึกษาฟรี',
-          target: 'ผู้มีอาการปวดหลังเรื้อรัง',
-          type: 'Ortho',
-          color: '#1e3a8a',
-          detail: 'รักษาอาการปวดหลังตรงจุด ไม่ต้องผ่าตัดเสมอไป นวัตกรรมลดปวดโดยแพทย์เฉพาะทาง',
-          imgDesc: 'วิดีโอสัมภาษณ์แพทย์เฉพาะทางด้าน Spine',
-          cta: 'นัดหมายแพทย์'
+          detail: 'โปรแกรมตรวจสุขภาพอัปเกรดใหม่ แบ่งตามช่วงอายุ (Explorer, Builder, Mentor, Giver)',
+          imgDesc: 'ภาพ Lifestyle ของคนหลายช่วงวัย พร้อมชื่อโปรแกรมตรวจสุขภาพ',
+          cta: 'สอบถามเพิ่มเติม'
         }
       ],
       timeline: [
-        [ { text: '🧬 Genetics: M-CODE', bg: '#1e3a8a', color: '#fff' }, { text: '🩺 Check-up Packages', bg: '#1e3a8a', color: '#fff' } ],
-        [ { text: '🧬 Genetics: M-CODE', bg: '#1e3a8a', color: '#fff' }, { text: '🦴 Ortho: Spine Center', bg: '#1e3a8a', color: '#fff' } ],
-        [ { text: '🩺 Check-up: Corporate', bg: '#1e3a8a', color: '#fff' }, { text: '👶 Women: IVF Consult', bg: '#1e3a8a', color: '#fff' } ],
-        [ { text: '🔥 M-CODE & Check-up Active', bg: '#dbeafe', color: '#1e3a8a' }, { text: '🩺 Check-up Packages', bg: '#1e3a8a', color: '#fff' } ]
+        [ { text: '🩺 Check-up: Upgraded', bg: '#1e3a8a', color: '#fff' }, { text: '💳 Partner: Visa Promo', bg: '#1e3a8a', color: '#fff' } ],
+        [ { text: '🩺 Check-up: Upgraded', bg: '#1e3a8a', color: '#fff' }, { text: '🔬 Gastro: Colonoscopy', bg: '#1e3a8a', color: '#fff' } ],
+        [ { text: '💳 Partner: Visa Expat', bg: '#1e3a8a', color: '#fff' }, { text: '🔬 Gastro & Triple Biotic', bg: '#1e3a8a', color: '#fff' } ],
+        [ { text: '🔥 Gastro & Check-up Active', bg: '#dbeafe', color: '#1e3a8a' }, { text: '💳 Partner: Visa Active', bg: '#1e3a8a', color: '#fff' } ]
       ]
     },
     bkk: {
@@ -68,54 +68,54 @@ export const initialData = {
       badgeBg: '#1A3B2B',
       borderTop: '#1A3B2B',
       fbUrl: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&view_all_page_id=98150133139&search_type=page',
-      count: '62',
-      focusBadge: '⚡ Active มากที่สุดในกลุ่ม',
+      count: '68',
+      focusBadge: '⚡ Active: Network Campaign',
       focusColor: '#166534',
       buttonBg: '#f0fdf4',
       logo: 'https://static.bangkokhospital.com/uploads/2024/04/BGHlogo.svg',
       ads: [
         {
-          title: 'ผ่าตัดข้อเข่าเทียม (Robotic)',
-          platform: 'Facebook + IG',
+          title: 'Golden Sun & Summer Glow',
+          platform: 'FB+IG+Google',
           date: 'พ.ค. 2569',
-          price: 'เริ่มต้น ฿250,000',
-          target: 'ผู้สูงอายุที่มีข้อเข่าเสื่อม',
-          type: 'Surgery CoE',
+          price: 'แพ็กเกจราคาพิเศษ',
+          target: 'ทุกเพศทุกวัย (รับหน้าร้อน)',
+          type: 'Check-up / Beauty',
           color: '#166534',
-          detail: 'ผ่าตัดข้อเข่าเทียมด้วยหุ่นยนต์ช่วยผ่าตัด (Robotic Arm) ฟื้นตัวไว เดินได้เร็วขึ้น',
-          imgDesc: 'วิดีโอแสดงการทำงานของแขนกล Robotic และรูปคนไข้เดินได้',
-          cta: 'Learn More'
+          detail: 'แพ็กเกจตรวจสุขภาพ Golden Sun สำหรับดูแลสุขภาพ และ Summer Glow เพื่อความงามรับหน้าร้อน',
+          imgDesc: 'แบนเนอร์โทนสีสดใส ธีมซัมเมอร์ "Summer Glow" และ "Golden Sun"',
+          cta: 'สั่งซื้อออนไลน์'
         },
         {
-          title: 'Better Club B Point (Phase 2)',
-          platform: 'Facebook + IG',
+          title: 'สิทธิพิเศษบัตรเครดิต KTC',
+          platform: 'Facebook',
           date: 'พ.ค. 2569',
-          price: 'สมัครฟรี',
-          target: 'ผู้ใช้บริการทั่วไป',
-          type: 'Loyalty',
+          price: 'ส่วนลดพิเศษ',
+          target: 'ผู้ถือบัตร KTC',
+          type: 'Corporate/Partner',
           color: '#0369a1',
-          detail: 'อัปเกรดความคุ้มค่ากับ Better Club รับสิทธิพิเศษ 2 ต่อ ทันทีที่สมัคร',
-          imgDesc: 'แบนเนอร์สีเขียว-ทอง พร้อมกราฟิกกล่องของขวัญและแอปมือถือ',
-          cta: 'สมัครเลย'
+          detail: 'ส่วนลดโปรแกรมตรวจสุขภาพ Prestige และ Signature พร้อมส่วนลดค่าห้อง/ค่ายา',
+          imgDesc: 'บัตร KTC วางคู่กับโลโก้โรงพยาบาลกรุงเทพ พร้อมข้อความส่วนลด',
+          cta: 'อ่านเงื่อนไข'
         },
         {
-          title: 'Second Opinion ปรึกษามะเร็ง',
-          platform: 'Google Search',
-          date: 'เม.ย. 2569',
-          price: 'ฟรีค่าปรึกษาครั้งแรก',
-          target: 'ผู้ป่วยมะเร็ง',
-          type: 'Oncology',
+          title: 'Be Healthy Fair 2026',
+          platform: 'Facebook',
+          date: '11-15 พ.ค. 2569',
+          price: 'Early Bird Price',
+          target: 'ลูกค้าที่ซื้อผ่านงาน Event',
+          type: 'Event Promo',
           color: '#166534',
-          detail: 'ไม่แน่ใจแนวทางการรักษา? รับคำปรึกษาที่ 2 จากศูนย์มะเร็ง รพ.กรุงเทพ',
-          imgDesc: 'Text Ad: "ปรึกษาแพทย์มะเร็งเฉพาะทาง Second Opinion ฟรีค่าแพทย์"',
-          cta: 'Get Info'
+          detail: 'จองแพ็กเกจสุขภาพราคา Early Bird ล่วงหน้าผ่านงาน Be Healthy Fair',
+          imgDesc: 'โปสเตอร์งาน Be Healthy Fair พร้อมวันที่ 11-15 พฤษภาคม',
+          cta: 'ลงทะเบียน Early Bird'
         }
       ],
       timeline: [
-        [ { text: '🏥 Surgery: Robotic Knee', bg: '#166534', color: '#fff' }, { text: '💎 Loyalty: Better Club', bg: '#0369a1', color: '#fff' } ],
-        [ { text: '🏥 Surgery: Robotic Knee', bg: '#166534', color: '#fff' }, { text: '🔪 Oncology: Second Opinion', bg: '#166534', color: '#fff' } ],
-        [ { text: '🏥 Surgery: Heart Center', bg: '#166534', color: '#fff' }, { text: '💎 Loyalty: Better Club', bg: '#0369a1', color: '#fff' } ],
-        [ { text: '🏥 Surgery: Robotic & Heart', bg: '#166534', color: '#fff' }, { text: '🔥 Active 62 Ads', bg: '#dcfce7', color: '#166534' } ]
+        [ { text: '🩺 Check-up: Summer Glow', bg: '#166534', color: '#fff' }, { text: '💳 Partner: KTC', bg: '#0369a1', color: '#fff' } ],
+        [ { text: '🩺 Check-up: Golden Sun', bg: '#166534', color: '#fff' }, { text: '🏥 Network: ชีววัฒนะ', bg: '#166534', color: '#fff' } ],
+        [ { text: '🎪 Event: Be Healthy Fair', bg: '#166534', color: '#fff' }, { text: '💳 Partner: KTC Active', bg: '#0369a1', color: '#fff' } ],
+        [ { text: '🔥 Summer & Event Active', bg: '#dcfce7', color: '#166534' }, { text: '🏥 CoE Network Ads', bg: '#166534', color: '#fff' } ]
       ]
     },
     bum: {
@@ -127,54 +127,54 @@ export const initialData = {
       badgeBg: '#128A84',
       borderTop: '#128A84',
       fbUrl: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&view_all_page_id=162830794940&search_type=page',
-      count: '24',
-      focusBadge: '🌏 Focus: International & Prevent',
+      count: '25',
+      focusBadge: '🌏 Focus: Inpatient & Telemed',
       focusColor: '#0f766e',
       buttonBg: '#f0fdfa',
       logo: 'https://www.bumrungrad.com/images/logo-bumrungrad-eng.png',
       ads: [
         {
-          title: 'VitalLife Scientific Wellness',
+          title: 'ส่วนลด 20% ห้องพักผู้ป่วยใน',
           platform: 'FB+IG+Threads',
           date: 'พ.ค. 2569',
-          price: '฿25,000+',
-          target: 'ผู้บริหาร / Expat',
-          type: 'Anti-Aging',
-          color: '#0f766e',
-          detail: 'ยกระดับสุขภาพระดับเซลล์ด้วยเวชศาสตร์ชะลอวัยที่ VitalLife โปรแกรม NAD+ และวิตามินดริป',
-          imgDesc: 'รูปแพทย์ผู้เชี่ยวชาญคู่กับคนไข้ดูอ่อนเยาว์ พื้นหลังสีเขียวอมฟ้า',
-          cta: 'Book Appointment'
-        },
-        {
-          title: 'ส่วนลดห้องพักผู้ป่วยใน 20%',
-          platform: 'Facebook',
-          date: 'พ.ค. 2569',
           price: 'ลด 20%',
-          target: 'คนไทยและ Expat',
+          target: 'ผู้ป่วยใน (Self-pay)',
           type: 'Promotion',
           color: '#0369a1',
-          detail: 'ดูแลคุณด้วยมาตรฐานระดับโลก พร้อมส่วนลดค่าห้อง 20% ถึง 30 มิ.ย. 2569',
-          imgDesc: 'ห้องพักผู้ป่วยหรูหรา พร้อมกราฟิก 20% OFF สีทอง',
-          cta: 'ดูรายละเอียดห้องพัก'
+          detail: 'ภายใต้แคมเปญ "Care That Stands Strong" ลด 20% ค่าห้องพัก (ถึง 31 พ.ค. 69)',
+          imgDesc: 'แบนเนอร์ Care That Stands Strong พร้อมข้อความลด 20% ค่าห้อง',
+          cta: 'ติดต่อเจ้าหน้าที่'
         },
         {
-          title: 'Genomic Testing',
-          platform: 'Google Search',
-          date: 'เม.ย. 2569',
-          price: '',
-          target: 'ผู้รักสุขภาพ',
-          type: 'Genetics',
+          title: 'Telemedicine ฟรีค่าบริการ',
+          platform: 'Facebook',
+          date: 'พ.ค. 2569',
+          price: 'ฟรี 555.-',
+          target: 'ผู้ป่วยโรคเรื้อรัง / ติดตามอาการ',
+          type: 'Telehealth',
           color: '#0f766e',
-          detail: 'Preventive Genomics and Family Check-up. Know your risks, plan your future.',
-          imgDesc: 'Text Ad: "Bumrungrad Genomic Medicine - Advanced DNA Testing"',
-          cta: 'Learn More'
+          detail: 'ยกเว้นค่าบริการ Telemedicine 555 บาท และส่งยาฟรี (เมื่อซื้อยาครบ 2,500 บาท)',
+          imgDesc: 'รูปคนไข้ปรึกษาแพทย์ผ่านจอแท็บเล็ต พร้อมไอคอนส่งฟรี',
+          cta: 'นัดหมาย Telemed'
+        },
+        {
+          title: 'แลกคะแนน The 1 ตรวจมะเร็ง',
+          platform: 'Google Search + FB',
+          date: 'พ.ค. 2569',
+          price: 'ใช้คะแนน The 1',
+          target: 'สมาชิก The 1 / เซ็นทรัล',
+          type: 'Corporate/Partner',
+          color: '#0f766e',
+          detail: 'ใช้พอยต์ The 1 แลกรับส่วนลดแพ็กเกจคัดกรองมะเร็งปากมดลูก และมะเร็งพื้นฐาน',
+          imgDesc: 'โลโก้ The 1 x Bumrungrad พร้อมรายละเอียดการแลกคะแนน',
+          cta: 'แลกคะแนน'
         }
       ],
       timeline: [
-        [ { text: '👴 Anti-Aging: VitalLife', bg: '#0f766e', color: '#fff' }, { text: '🧬 Genomics Testing', bg: '#0f766e', color: '#fff' } ],
-        [ { text: '💰 Promo: ลด 20% ห้องพัก', bg: '#0369a1', color: '#fff' }, { text: '👴 Anti-Aging: NAD+', bg: '#0f766e', color: '#fff' } ],
-        [ { text: '💰 Promo: ลด 20% ห้องพัก', bg: '#0369a1', color: '#fff' }, { text: '🌏 Expat Check-up', bg: '#0f766e', color: '#fff' } ],
-        [ { text: '💰 Promo: ลด 20% ห้องพัก', bg: '#0369a1', color: '#fff' }, { text: '👴 Anti-Aging & Prevent', bg: '#ccfbf1', color: '#0f766e' } ]
+        [ { text: '📱 Telemed: ฟรีค่าบริการ', bg: '#0f766e', color: '#fff' }, { text: '💳 Partner: The 1', bg: '#0f766e', color: '#fff' } ],
+        [ { text: '💰 Promo: ลดค่าห้อง 20%', bg: '#0369a1', color: '#fff' }, { text: '🏥 Care Stands Strong', bg: '#0f766e', color: '#fff' } ],
+        [ { text: '💰 Promo: ลดค่าห้อง 20%', bg: '#0369a1', color: '#fff' }, { text: '📱 Telemed: ส่งยาฟรี', bg: '#0f766e', color: '#fff' } ],
+        [ { text: '🔥 Promo ห้องพัก Active', bg: '#ccfbf1', color: '#0f766e' }, { text: '💳 Partner: The 1 มะเร็ง', bg: '#0f766e', color: '#fff' } ]
       ]
     },
     med: {
@@ -186,54 +186,54 @@ export const initialData = {
       badgeBg: '#E27447',
       borderTop: '#E27447',
       fbUrl: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&view_all_page_id=110584567075157&search_type=page',
-      count: '38',
-      focusBadge: '🔬 Focus: CoE & Technology',
+      count: '42',
+      focusBadge: '🛒 Focus: Online Packages (GoWabi)',
       focusColor: '#c05a30',
       buttonBg: '#fff7ed',
       logo: 'https://www.medparkhospital.com/logo.svg',
       ads: [
         {
-          title: 'SMILE Pro ศัลยกรรมสายตา',
-          platform: 'FB+IG+TikTok',
+          title: 'Online Packages via GoWabi/Shopee',
+          platform: 'GoWabi / Shopee / FB',
           date: 'พ.ค. 2569',
-          price: '฿119,900',
-          target: 'วัยทำงาน (20-40 ปี)',
-          type: 'Eye Surgery',
-          color: '#0891b2',
-          detail: 'บอกลาแว่นตาด้วยเทคโนโลยีไร้ใบมีด SMILE Pro แผลเล็ก ฟื้นตัวไวที่สุดในตอนนี้ ทำโดยจักษุแพทย์เฉพาะทาง',
-          imgDesc: 'วัยรุ่นใส่แว่นแล้วถอดแว่นยิ้ม กราฟิกสีส้ม-ฟ้า 119,900 บาท',
-          cta: 'ลงทะเบียนรับสิทธิ์'
-        },
-        {
-          title: 'IVF Center: Success Story',
-          platform: 'Facebook Video',
-          date: 'พ.ค. 2569',
-          price: 'แพ็กเกจเหมาจ่าย',
-          target: 'คู่สมรสที่มีบุตรยาก',
-          type: 'Fertility',
+          price: 'โปรพิเศษออนไลน์',
+          target: 'คนรุ่นใหม่ที่ชอบซื้อดีลออนไลน์',
+          type: 'E-Commerce',
           color: '#be185d',
-          detail: 'ความฝันที่เป็นจริง เรื่องราวความสำเร็จของครอบครัวที่ทำ IVF กับ MedPark (ค่าใช้จ่ายชัดเจน ไม่มีแฝง)',
-          imgDesc: 'วิดีโอสัมภาษณ์คุณแม่และคุณพ่ออุ้มเด็กทารก',
-          cta: 'ปรึกษาแพทย์ฟรี'
+          detail: 'บุกตลาด E-Voucher ขายแพ็กเกจสุขภาพ, วัคซีน, ตรวจการนอนหลับ ผ่านแอป GoWabi และ Shopee',
+          imgDesc: 'กราฟิกโปรโมต E-Voucher ซื้อแพ็กเกจ MedPark ผ่านแอป',
+          cta: 'ซื้อเลยบน GoWabi'
         },
         {
-          title: 'มะเร็งเต้านม รู้ทันรักษาได้',
-          platform: 'FB+IG',
-          date: 'เม.ย. 2569',
-          price: '฿3,500',
-          target: 'ผู้หญิง 35 ปีขึ้นไป',
-          type: 'Oncology',
+          title: 'แพ็กเกจส่องกล้อง (Gastro/Colon)',
+          platform: 'Facebook',
+          date: 'พ.ค. 2569',
+          price: 'สอบถามราคา',
+          target: 'ผู้มีอาการปวดท้อง / วัย 40+',
+          type: 'Gastro',
           color: '#c05a30',
-          detail: 'ตรวจคัดกรองมะเร็งเต้านมด้วย Digital Mammogram & Ultrasound ทราบผลรวดเร็ว',
-          imgDesc: 'ผู้หญิงจับหน้าอกด้วยรอยยิ้ม พร้อมเครื่อง Mammogram',
+          detail: 'โปรแกรมส่องกล้องทางเดินอาหารและลำไส้ สามารถผ่อนชำระได้ผ่านบัตรเครดิตที่ร่วมรายการ',
+          imgDesc: 'รูปแพทย์กำลังเตรียมอุปกรณ์ส่องกล้องในห้องตรวจ',
+          cta: 'จองคิว'
+        },
+        {
+          title: 'แพ็กเกจวัคซีน (HPV / ไข้หวัดใหญ่)',
+          platform: 'FB+IG',
+          date: 'พ.ค. 2569',
+          price: 'ตามแพ็กเกจ',
+          target: 'ทุกช่วงวัย',
+          type: 'Vaccine',
+          color: '#0891b2',
+          detail: 'รณรงค์ฉีดวัคซีน HPV 9 สายพันธุ์ และวัคซีนไข้หวัดใหญ่ป้องกันล่วงหน้า',
+          imgDesc: 'รูปพยาบาลฉีดวัคซีน พร้อมข้อความ "ป้องกันดีกว่ารักษา"',
           cta: 'ซื้อแพ็กเกจ'
         }
       ],
       timeline: [
-        [ { text: '👁️ Eye: SMILE Pro ฿119,900', bg: '#0891b2', color: '#fff' }, { text: '🧬 IVF: Success Story', bg: '#be185d', color: '#fff' } ],
-        [ { text: '👁️ Eye: SMILE Pro ฿119,900', bg: '#0891b2', color: '#fff' }, { text: '🎀 Oncology: Mammogram', bg: '#c05a30', color: '#fff' } ],
-        [ { text: '❤️ Heart: Cath Lab', bg: '#dc2626', color: '#fff' }, { text: '🧬 IVF: เหมาจ่าย', bg: '#be185d', color: '#fff' } ],
-        [ { text: '👁️ Eye: SMILE Pro Active', bg: '#0891b2', color: '#fff' }, { text: '🔬 CoE: Heart & IVF', bg: '#fed7aa', color: '#c05a30' } ]
+        [ { text: '🛒 Online: GoWabi Promos', bg: '#be185d', color: '#fff' }, { text: '💉 Vaccine: HPV/Flu', bg: '#0891b2', color: '#fff' } ],
+        [ { text: '🛒 Online: Shopee Vouchers', bg: '#be185d', color: '#fff' }, { text: '🔬 Gastro: ส่องกล้อง', bg: '#c05a30', color: '#fff' } ],
+        [ { text: '🛏️ Sleep Quality Package', bg: '#c05a30', color: '#fff' }, { text: '💉 Vaccine: HPV/Flu', bg: '#0891b2', color: '#fff' } ],
+        [ { text: '🔥 E-Commerce Active', bg: '#fed7aa', color: '#c05a30' }, { text: '🔬 Gastro & Sleep Active', bg: '#c05a30', color: '#fff' } ]
       ]
     },
     sam: {
@@ -245,74 +245,74 @@ export const initialData = {
       badgeBg: '#7B4FA0',
       borderTop: '#7B4FA0',
       fbUrl: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=TH&view_all_page_id=204250892958095&search_type=page',
-      count: '28',
-      focusBadge: '👨‍👩‍👧 Focus: Check-up & Maternity',
+      count: '55',
+      focusBadge: '👨‍👩‍👧 Focus: Summer Fit & LASIK',
       focusColor: '#6d28d9',
       buttonBg: '#faf5ff',
       logo: 'https://www.samitivejhospitals.com/_nuxt/img/logo.5ada14b.svg',
       ads: [
         {
-          title: 'Health Check-up ผู้หญิง/ผู้ชาย',
+          title: 'Get Summer Get Fit 2026',
           platform: 'FB+IG+Google',
           date: 'พ.ค. 2569',
-          price: 'เริ่มต้น ฿6,000',
+          price: 'แพ็กเกจวัยรุ่น/ผู้ใหญ่',
           target: 'คนรุ่นใหม่และวัยทำงาน',
           type: 'Check-up',
           color: '#7B4FA0',
-          detail: 'โปรแกรมตรวจสุขภาพสุดคุ้ม! ลดสูงสุด 50% สำหรับผู้หญิง <30 ปี และผู้ชาย <40 ปี',
-          imgDesc: 'แบนเนอร์สีม่วง-ขาว รูปคู่รักหนุ่มสาวสุขภาพดี',
+          detail: 'แคมเปญใหญ่ตรวจสุขภาพรับซัมเมอร์ ราคาพิเศษสำหรับซื้อออนไลน์ (ถึง 31 พ.ค.)',
+          imgDesc: 'แบนเนอร์ Get Summer Get Fit สีสันสดใส รูปคนออกกำลังกาย',
           cta: 'ซื้อออนไลน์'
         },
         {
-          title: 'Samitivej Maternity Package',
-          platform: 'Facebook',
+          title: 'LASIK ราคาพิเศษ 89,000.-',
+          platform: 'Facebook (Chinatown)',
           date: 'พ.ค. 2569',
-          price: 'เริ่มต้น ฿99,000',
-          target: 'คุณแม่ตั้งครรภ์',
-          type: 'Maternity',
+          price: '฿89,000',
+          target: 'ผู้มีปัญหาสายตา',
+          type: 'Eye Surgery',
           color: '#be185d',
-          detail: 'แพ็กเกจคลอดเหมาจ่าย ดูแลคุณแม่และลูกน้อยอย่างอบอุ่นและปลอดภัย พร้อมสิทธิพิเศษจากพันธมิตร',
-          imgDesc: 'รูปคุณแม่ตั้งครรภ์จับท้องอย่างอ่อนโยน โทนสีชมพูพาสเทล',
-          cta: 'ดูแพ็กเกจคลอด'
+          detail: 'โปรแกรมรักษาภาวะสายตาสั้น (LASIK) ลดราคาพิเศษ (จากปกติ 120,000 บาท)',
+          imgDesc: 'ตัวเลข 89,000 บาท ตัวใหญ่ พร้อมรูปคนถอดแว่น',
+          cta: 'ลงทะเบียนรับสิทธิ์'
         },
         {
-          title: 'ศูนย์กุมารเวชกรรม (Children\'s Hospital)',
-          platform: 'FB+IG',
-          date: 'เม.ย. 2569',
-          price: '฿2,500 (วัคซีน)',
-          target: 'พ่อแม่ที่มีลูกเล็ก',
-          type: 'Pediatrics',
+          title: 'Check-up 1 แถม 1 (4,888.-)',
+          platform: 'FB (Chonburi)',
+          date: 'พ.ค. 2569',
+          price: '฿4,888',
+          target: 'ลูกค้าต่างจังหวัด / ชลบุรี',
+          type: 'Check-up',
           color: '#0369a1',
-          detail: 'วัคซีนป้องกันไข้หวัดใหญ่ 4 สายพันธุ์ และไอพีดี ปกป้องลูกรักด้วยวัคซีนจำเป็น',
-          imgDesc: 'รูปเด็กน้อยยิ้มแย้มกับคุณหมอใจดี',
-          cta: 'จองวัคซีน'
+          detail: 'ตรวจสุขภาพ 17 รายการ ซื้อ 1 แถม 1 ที่สาขาชลบุรี พร้อมรับคูปองส่วนลดวัคซีน',
+          imgDesc: 'ป้าย 1 แถม 1 สีแดง โดดเด่น',
+          cta: 'จองแพ็กเกจ'
         }
       ],
       timeline: [
-        [ { text: '🩺 Check-up: ฿6k/฿9.5k', bg: '#7B4FA0', color: '#fff' }, { text: '👶 Maternity: ฿99k', bg: '#be185d', color: '#fff' } ],
-        [ { text: '🩺 Check-up: ฿6k/฿9.5k', bg: '#7B4FA0', color: '#fff' }, { text: '🧸 Pediatrics: วัคซีน', bg: '#0369a1', color: '#fff' } ],
-        [ { text: '❤️ Heart: TAVI', bg: '#dc2626', color: '#fff' }, { text: '👶 Maternity: ฿99k', bg: '#be185d', color: '#fff' } ],
-        [ { text: '🩺 Check-up: ราคาชัดเจน', bg: '#ede9fe', color: '#6d28d9' }, { text: '👶 Maternity & Pediatrics', bg: '#be185d', color: '#fff' } ]
+        [ { text: '🩺 Check-up: Summer Fit', bg: '#7B4FA0', color: '#fff' }, { text: '👁️ Eye: LASIK 89k', bg: '#be185d', color: '#fff' } ],
+        [ { text: '🩺 Check-up: Summer Fit', bg: '#7B4FA0', color: '#fff' }, { text: '🩺 Check-up 1 แถม 1', bg: '#0369a1', color: '#fff' } ],
+        [ { text: '🩺 Platinum Male/Female', bg: '#7B4FA0', color: '#fff' }, { text: '👁️ Eye: LASIK 89k', bg: '#be185d', color: '#fff' } ],
+        [ { text: '🔥 Summer Fit Active', bg: '#ede9fe', color: '#6d28d9' }, { text: '🩺 Check-up 1 แถม 1', bg: '#0369a1', color: '#fff' } ]
       ]
     }
   },
   pricing: [
-    { service: '🩺 ตรวจสุขภาพ', bnh: { p1: '฿7,900', p2: 'Executive' }, bkk: { p1: 'Corporate', p2: 'Focus' }, bum: { p1: 'Exclusive', p2: 'Screening' }, med: { p1: 'ไม่ระบุในแอด', p2: '' }, sam: { p1: '฿6,000 (หญิง <30)', p2: '฿9,500 (ชาย <40)', highlight: true } },
-    { service: '🏥 ห้องพักผู้ป่วยใน', bnh: { p1: 'ไม่ระบุ', p2: '' }, bkk: { p1: 'ไม่ระบุในแอด', p2: '' }, bum: { p1: 'ลด 20%', p2: 'ถึง 30 มิ.ย.', highlight: true }, med: { p1: 'ไม่ระบุในแอด', p2: '' }, sam: { p1: 'ไม่ระบุในแอด', p2: '' } },
-    { service: '👁️ ศัลยกรรมสายตา', bnh: { p1: 'ไม่ระบุ', p2: '' }, bkk: { p1: 'ไม่ระบุในแอด', p2: '' }, bum: { p1: 'ไม่ระบุในแอด', p2: '' }, med: { p1: '฿119,900', p2: 'SMILE Pro', highlight: true }, sam: { p1: 'ไม่ระบุในแอด', p2: '' } },
-    { service: '🧬 IVF / เด็กหลอดแก้ว', bnh: { p1: 'ไม่ระบุ', p2: '' }, bkk: { p1: 'ไม่ระบุในแอด', p2: '' }, bum: { p1: 'ไม่ระบุในแอด', p2: '' }, med: { p1: 'เหมาจ่าย', p2: 'ไม่มีแฝง', highlight: true }, sam: { p1: 'ไม่ระบุในแอด', p2: '' } },
-    { service: '👶 แพ็กเกจคลอด', bnh: { p1: 'ไม่ระบุ', p2: '' }, bkk: { p1: 'ไม่ระบุราคา', p2: '' }, bum: { p1: 'ไม่ระบุในแอด', p2: '' }, med: { p1: 'ไม่ระบุในแอด', p2: '' }, sam: { p1: 'เริ่มต้น ฿99,000', p2: 'Maternity', highlight: true } }
+    { service: '🩺 ตรวจสุขภาพพื้นฐาน', bnh: { p1: 'TailorMade', p2: 'ลด 40% (Visa)' }, bkk: { p1: 'Golden Sun', p2: 'Summer Glow' }, bum: { p1: 'ส่วนลด 20%', p2: '(ใช้คะแนน The 1)' }, med: { p1: 'E-Voucher', p2: 'บน GoWabi' }, sam: { p1: 'Summer Fit', p2: '1 แถม 1 (ชลบุรี)', highlight: true } },
+    { service: '🏥 ห้องพักผู้ป่วยใน', bnh: { p1: 'ลด 15%', p2: '(บัตร Visa ต่างชาติ)', highlight: true }, bkk: { p1: 'ส่วนลด', p2: '(บัตร KTC)' }, bum: { p1: 'ลด 20%', p2: 'Self-pay (ถึง 31 พ.ค.)', highlight: true }, med: { p1: 'ไม่ระบุ', p2: '' }, sam: { p1: 'ไม่ระบุ', p2: '' } },
+    { service: '🔬 ส่องกล้อง (Gastro/Colon)', bnh: { p1: 'แถม Triple Biotic', p2: '(ถึง 30 มิ.ย.)', highlight: true }, bkk: { p1: 'ไม่ระบุ', p2: '' }, bum: { p1: 'ไม่ระบุ', p2: '' }, med: { p1: 'มีโปรผ่อน 0%', p2: 'บนออนไลน์', highlight: true }, sam: { p1: 'ไม่ระบุ', p2: '' } },
+    { service: '📱 บริการ Telemedicine', bnh: { p1: 'ไม่ระบุ', p2: '' }, bkk: { p1: 'ไม่ระบุ', p2: '' }, bum: { p1: 'ฟรีค่าบริการ 555.-', p2: 'และส่งยาฟรี', highlight: true }, med: { p1: 'ไม่ระบุ', p2: '' }, sam: { p1: 'แอป Samitivej Plus', p2: '' } },
+    { service: '👁️ ศัลยกรรมสายตา (LASIK/SMILE)', bnh: { p1: 'ไม่ระบุ', p2: '' }, bkk: { p1: 'ไม่ระบุ', p2: '' }, bum: { p1: 'ไม่ระบุ', p2: '' }, med: { p1: 'SMILE Pro', p2: 'ทำโปรต่อเนื่อง' }, sam: { p1: 'LASIK ฿89,000', p2: '(สาขา Chinatown)', highlight: true } }
   ],
   implications: [
-    { icon: '🚀', title: '1. MedPark ทุ่มงบการตลาดกวาดตลาดพรีเมียม', border: '#E27447', bg: '#fff5f0', color: '#c05a30', desc: 'MedPark เน้นการโปรโมท SMILE Pro แบบเจาะราคา 119k ตรงๆ และชูจุดแข็ง IVF ทำให้กวาดฐานลูกค้า Generation Y-Z ไปได้อย่างมาก' },
-    { icon: '💰', title: '2. Samitivej ชนะเลิศด้าน Price Transparency', border: '#7B4FA0', bg: '#f5f0ff', color: '#5B2F80', desc: 'Samitivej ลงราคา Check-up (6k/9.5k) และคลอด (99k) อย่างชัดเจนในทุกแพลตฟอร์ม ทำให้ลูกค้าเปรียบเทียบง่ายและตัดสินใจซื้อได้เร็วกว่า' },
-    { icon: '🏖️', title: '3. Bumrungrad ปิดช่องว่างช่วง Low Season', border: '#128A84', bg: '#f0f9f8', color: '#0f766e', desc: 'การเล่นโปรโมชันลดห้องพัก 20% ของ BUM เป็นการดึงคนไข้ต่างชาติและคนไทยที่ชะลอการผ่าตัดให้เข้ามารักษาในช่วงกลางปี BNH ควรจับตาโมเดลนี้' }
+    { icon: '⚔️', title: '1. สมรภูมิ Inpatient และส่วนลดห้องพัก', border: '#128A84', bg: '#f0f9f8', color: '#0f766e', desc: 'Bumrungrad ออกหมัดหนักด้วยการลดค่าห้อง 20% ทั่วไป ขณะที่ BNH ใช้กลยุทธ์ Co-Promotion กับ Visa ลด 15% มุ่งเป้า Expat ถือเป็นการชิง Market Share ผู้ป่วยในที่น่าจับตาในเดือนนี้' },
+    { icon: '🛒', title: '2. MedPark ดัน E-Commerce เต็มตัว', border: '#E27447', bg: '#fff5f0', color: '#c05a30', desc: 'MedPark เน้นลงตลาดออนไลน์ (GoWabi, Shopee) ขาย E-Voucher แพ็กเกจวัคซีนและส่องกล้อง ซึ่งเข้าถึงกลุ่มเป้าหมายวัย 25-40 ปีที่ชอบซื้อดีลลดราคาได้ดีมาก' },
+    { icon: '☀️', title: '3. แคมเปญหน้าร้อนชนกัน (BKK vs SAM)', border: '#166534', bg: '#f0fdf4', color: '#166534', desc: 'Bangkok Hospital ปล่อย "Golden Sun / Summer Glow" ชนกับ "Get Summer Get Fit 2026" ของ Samitivej โดยตรง แสดงถึงการแย่งชิงฐานลูกค้าตรวจสุขภาพประจำปีช่วงกลางปี' }
   ],
   timelineHeaders: [
-    'W1 · 7-14 เม.ย. 2569',
-    'W2 · 15-22 เม.ย. 2569',
-    'W3 · 23-30 เม.ย. 2569',
-    'W4 · 1-7 พ.ค. 2569 🔴 ล่าสุด'
+    'W1 · 17-23 เม.ย. 2569',
+    'W2 · 24-30 เม.ย. 2569',
+    'W3 · 1-4 พ.ค. 2569',
+    'W4 · 5-7 พ.ค. 2569 🔴 ล่าสุด'
   ],
   competitorsData: [
     {
@@ -370,32 +370,32 @@ export const initialData = {
       ]
     }
   ],
-  updateDate: '7 พฤษภาคม 2569',
+  updateDate: '8 พฤษภาคม 2569',
   monthRange: 'ย้อนหลัง 7 วัน (1 พ.ค. - 7 พ.ค. 2569)',
   bnhNextSteps: [
     {
-      title: 'Counter-Offer: Premium Maternity & Pediatrics',
-      desc: 'จากการที่ Samitivej ทุ่มงบเจาะตลาดคุณแม่และเด็ก (คลอด 99k + วัคซีน) BNH ควรตอกย้ำภาพลักษณ์ "Family Hospital" นำเสนอแพ็กเกจคลอดระดับพรีเมียมที่พ่วงการดูแลทารกแรกเกิดอย่างใกล้ชิด',
+      title: 'Counter-Offer: Inpatient Room Discount',
+      desc: 'เนื่องจาก Bumrungrad ลดค่าห้อง 20% แบบเจาะกลุ่ม Self-pay BNH ควรไฮไลต์ส่วนลด 15% จากบัตร Visa ออกสื่อให้หนักขึ้น หรือออกแคมเปญเพิ่ม Value เช่น "อัปเกรดห้องพักฟรี" สำหรับคนไข้ผ่าตัด',
       priority: 'High',
-      icon: '👶'
+      icon: '🏥'
     },
     {
-      title: 'Aggressive Pricing on Check-ups',
-      desc: 'Samitivej ลงราคา Check-up ชัดเจนมาก BNH ควรสู้ด้วยโปรแกรม Executive Check-up พร้อมโปรโมชันบัตรเครดิต และแสดงราคาให้ชัดเจนบนสื่อโฆษณาเพื่อชิงลูกค้ากลับมา',
+      title: 'Boost Gastro Package Awareness',
+      desc: 'แคมเปญส่องกล้องของ BDMS ค่อนข้างแข็งแรง (แถม Triple Biotic) BNH ควรนำแคมเปญนี้ไปสู้กับ MedPark ที่กำลังขายแพ็กเกจส่องกล้องบน GoWabi โดยเน้นชูจุดแข็งเรื่องแพทย์เฉพาะทาง',
       priority: 'High',
-      icon: '💰'
+      icon: '🔬'
     },
     {
-      title: 'Highlight Oncology (M-CODE) & Spine',
-      desc: 'MedPark ทุ่มหนักเรื่อง SMILE Pro และ IVF ส่วน BKK เน้น Robotic Knee ดังนั้น BNH ควรฉีกไปยึดตลาดมะเร็งวิทยา (M-CODE) และเรื่องกระดูกสันหลังให้แข็งแรงที่สุด',
+      title: 'Enter the E-Commerce Battlefield',
+      desc: 'MedPark ดึงลูกค้าวัยทำงานและคนรุ่นใหม่ไปได้มากจากการขายดีลบน GoWabi/Shopee BNH ควรทดลองนำแพ็กเกจวัคซีนหรือ Check-up พื้นฐานไปวางขายบน E-Commerce Platform บ้าง',
       priority: 'Medium',
-      icon: '🧬'
+      icon: '🛒'
     },
     {
-      title: 'Increase Share of Voice',
-      desc: 'Bangkok Hospital ยิงแอดทะลุ 60 ตัวต่อสัปดาห์ BNH จำเป็นต้องปรับเพิ่มความถี่ในการ Retargeting กลุ่มคนไข้เก่าที่เคยตรวจสุขภาพ เพื่อป้องกันการย้ายโรงพยาบาล',
+      title: 'Summer Health Check-up Wars',
+      desc: 'BKK และ SAM กำลังแข่งขันดุเดือดในธีม Summer (Golden Sun / Summer Fit) BNH สามารถแทรกตัวด้วย "Summer Wellness Retreat" ที่เน้นการดูแลแบบพรีเมียมส่วนตัว หลีกเลี่ยงสงครามราคา',
       priority: 'Medium',
-      icon: '📢'
+      icon: '☀️'
     }
   ]
 };
